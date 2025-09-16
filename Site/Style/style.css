@@ -9,7 +9,7 @@
 .fullscreen-image {
     width: 100vw;
     height: 100vh; /* 100% da altura da tela */
-    background-image: url('../assets/imagens/images3.jpg'); /* substitua pelo caminho da sua imagem */
+    background-color: #fff; /* substitua pelo caminho da sua imagem */
     background-size: cover; /* cobre toda a área */
     background-position: center; /* centraliza a imagem */
     background-repeat: no-repeat;
@@ -29,10 +29,11 @@
 /* Título principal */
 .titulo-principal {
     font-size: 100px; /* tamanho do título */
-    color: #fff;
-    margin-top: 150px;
-    margin-bottom: 380px; /* distância do botão */
+    color: #f0c040;
+    border: 15px solid #0C4C66;  
+    margin-bottom: 30px; /* distância do botão */
     text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* dá contraste sobre a imagem */
+    
 }
 
 /* Botão estilizado */
@@ -41,23 +42,68 @@
     font-size: 1.3rem;
     border: none;
     border-radius: 8px;
-    background-color: rgba(0, 123, 255, 0.8);
-    color: #fff;
+    background-color: #0C4C66;
+    color: #f0c040;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 30px;
+   
+ 
 }
 
 .btn-entrar:hover {
-    background-color: rgba(0, 123, 255, 1);
+  color: #fff;
+    background-color: #f0c040;
 }
 /* Logo no topo esquerdo */
 .logo-topo {
-    position: absolute;
-    top: 20px;   /* distância do topo */
     left: 20px;  /* distância da esquerda */
-    width: 80px; /* tamanho do logo */
+    width: 150px; /* tamanho do logo */
     height: auto;
 }
+.logo-topo:hover{
+  transform: scale(1.3);
+  transition: all 0.3s ease;
+
+}
+
+/* Cabeçalho */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+
+/* Menu */
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #0C4C66; /* se o fundo for escuro */
+  font-weight: bold;
+  font-size: 22px;
+  transition: all 0.3s ease; /* suaviza a animação */
+  display: inline-block; /* necessário para aplicar o transform */
+}
+
+.menu ul li a:hover {
+  color: #f0c040; /* cor de destaque */
+  transform: scale(2.2); /* aumenta levemente */
+}
+
 
 /* Responsivo: reduzir logo em telas pequenas */
 @media (max-width: 600px) {
@@ -75,4 +121,120 @@
         padding: 12px 40px;
         font-size: 1rem;
     }
+}
+
+.carrossel-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 710px;
+}
+
+.menu-itens {
+  display: flex;
+  gap: 200px;
+  overflow-x: auto; /* permite rolar horizontal */
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* esconde barra no Firefox */
+}
+
+.carrossel-menu {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  overflow: hidden; /* esconde itens fora da área visível */
+  position: relative;
+}
+
+.menu-itens {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.menu-itens::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.menu-itens a {
+  flex: 0 0 calc(33.33% - 20px); /* mostra 3 itens por vez */
+  text-align: center;
+  padding: 12px 24px;
+  background: #f0c040;
+  color: #222;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.menu-itens a:hover {
+  background: #d4a62c;
+  transform: scale(1.05);
+}
+
+
+.carrossel-menu {
+  width: 90%;
+  max-width: 1000px;
+  margin: 60px auto;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+}
+
+.menu-itens {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px;
+}
+.menu-itens::-webkit-scrollbar { display: none; }
+
+/* Cada item ocupa 1/3 da largura visível */
+.item {
+  position: relative; /* importante para posicionar o texto sobre a imagem */
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-width: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.item img {
+  width: 100%;
+  height: 220px; /* altura fixa -> todos ficam iguais */
+  object-fit: cover; /* corta sem distorcer */
+  display: block;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.hint {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: 6px;
+}
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  pointer-events: none; /* texto não bloqueia clique na imagem */
 }
