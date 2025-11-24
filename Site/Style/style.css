@@ -1,240 +1,456 @@
-/* Remove margin/padding padrão */
+/* === RESET PADRÃO === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* A imagem ocupa 100% da viewport */
-.fullscreen-image {
-    width: 100vw;
-    height: 100vh; /* 100% da altura da tela */
-    background-color: #fff; /* substitua pelo caminho da sua imagem */
-    background-size: cover; /* cobre toda a área */
-    background-position: center; /* centraliza a imagem */
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-
-/* Overlay centralizado */
-.overlay {
-    position: absolute;
-    top: 60%; /* Alterado de 50% para 60% para descer */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-/* Título principal */
-.titulo-principal {
-    font-size: 100px; /* tamanho do título */
-    color: #f0c040;
-    border: 15px solid #0C4C66;  
-    margin-bottom: 30px; /* distância do botão */
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5); /* dá contraste sobre a imagem */
-    
-}
-
-/* Botão estilizado */
-.btn-entrar {
-    padding: 18px 55px;
-    font-size: 1.3rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #0C4C66;
-    color: #f0c040;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 30px;
-   
- 
-}
-
-.btn-entrar:hover {
-  color: #fff;
-    background-color: #f0c040;
-}
-/* Logo no topo esquerdo */
-.logo-topo {
-    left: 20px;  /* distância da esquerda */
-    width: 150px; /* tamanho do logo */
-    height: auto;
-}
-.logo-topo:hover{
-  transform: scale(1.3);
-  transition: all 0.3s ease;
-
-}
-
-/* Cabeçalho */
-.topo {
+body {
+  background-color: #fff;
+  color: #0C4C66;
+  text-align: center;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* === CABEÇALHO === */
+header {
+  padding: 30px;
+  background-color: #0C4C66;
+  color: white;
+  font-size: 28px;
+}
+
+/* === BOTÃO "SELECIONE O SERVIÇO" === */
+.btn-servicos {
+  background-color: #0C4C66;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  margin: 50px auto;
+  display: inline-block;
+}
+
+.btn-servicos:hover {
+  background-color: #f0c040;
+  color: #0C4C66;
+}
+
+/* === MODAL === */
+/* === MODAL === */
+.modal {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(13, 27, 42, 0.8); /* translúcido */
+  backdrop-filter: blur(5px);
+  justify-content: center;
   align-items: center;
-  padding: 15px 40px;
+  overflow-y: auto; /* permite rolagem dentro do modal */
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  color: #0C4C66;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+  max-height: 90vh; /* limita a altura total */
+  overflow-y: auto; /* adiciona rolagem dentro do modal */
+}
+
+/* Impede o fundo da página de rolar quando o modal está aberto */
+body.modal-aberto {
+  overflow: hidden;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.fechar {
   position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #0C4C66;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fechar:hover {
+  color: #f0c040;
+}
+
+/* === SERVIÇOS === */
+.servicos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.servico-item {
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-item img {
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.servico-item p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #0C4C66;
+}
+
+.servico-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+/* === RODAPÉ === */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  background-color: #0C4C66;
+  color: white;
+  font-size: 14px;
+}
+
+/* === ANIMAÇÃO === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* === VÍDEO DE FUNDO === */
+#bg-video {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  height: 100%;
+  object-fit: cover; /* cobre toda a tela */
+  z-index: -1; /* fica atrás de tudo */
+  opacity: 0.9; /* opcional: leve transparência */
+  pointer-events: none; /* evita que clique no vídeo */
+  background-color: #000; /* fallback para evitar tela branca */
+}
+/* Esconder controles padrão em todos os navegadores */
+#bg-video::-webkit-media-controls {
+    display: none !important;
 }
 
-
-/* Menu */
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+#bg-video::-moz-media-controls {
+    display: none !important;
 }
 
-.menu ul li a {
-  text-decoration: none;
-  color: #0C4C66; /* se o fundo for escuro */
-  font-weight: bold;
-  font-size: 22px;
-  transition: all 0.3s ease; /* suaviza a animação */
-  display: inline-block; /* necessário para aplicar o transform */
+#bg-video::-ms-media-controls {
+    display: none !important;
 }
 
-.menu ul li a:hover {
-  color: #f0c040; /* cor de destaque */
-  transform: scale(2.2); /* aumenta levemente */
+/* Garante que o vídeo não interaja com toques */
+#bg-video {
+    pointer-events: none;
+}
+/* Define tamanho e estilo do logo */
+/* garante que o body seja referência para posicionamento absoluto */
+body {
+  position: relative; /* adiciona isso se ainda não tiver */
 }
 
-
-/* Responsivo: reduzir logo em telas pequenas */
-@media (max-width: 600px) {
-    .logo-topo {
-        width: 50px;
-        top: 15px;
-        left: 15px;
-    }
-
-    .titulo-principal {
-        font-size: 2rem;
-    }
-
-    .btn-entrar {
-        padding: 12px 40px;
-        font-size: 1rem;
-    }
-}
-
-.carrossel-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin: 10px auto;
-  width: 100%;
-  max-width: 710px;
-}
-
-.menu-itens {
-  display: flex;
-  gap: 200px;
-  overflow-x: auto; /* permite rolar horizontal */
-  scroll-behavior: smooth;
-  scrollbar-width: none; /* esconde barra no Firefox */
-}
-
-.carrossel-menu {
-  width: 90%;
-  max-width: 800px;
-  margin: 40px auto;
-  overflow: hidden; /* esconde itens fora da área visível */
-  position: relative;
-}
-
-.menu-itens {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-}
-
-.menu-itens::-webkit-scrollbar {
-  display: none; /* Chrome */
-}
-
-.menu-itens a {
-  flex: 0 0 calc(33.33% - 20px); /* mostra 3 itens por vez */
-  text-align: center;
-  padding: 12px 24px;
-  background: #f0c040;
-  color: #222;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.menu-itens a:hover {
-  background: #d4a62c;
-  transform: scale(1.05);
-}
-
-
-.carrossel-menu {
-  width: 90%;
-  max-width: 1000px;
-  margin: 60px auto;
-  overflow: hidden;
-  position: relative;
-  padding: 10px 0;
-}
-
-.menu-itens {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 8px;
-}
-.menu-itens::-webkit-scrollbar { display: none; }
-
-/* Cada item ocupa 1/3 da largura visível */
-.item {
-  position: relative; /* importante para posicionar o texto sobre a imagem */
-  flex: 0 0 calc((100% - 40px) / 3);
-  min-width: 200px;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.item img {
-  width: 100%;
-  height: 220px; /* altura fixa -> todos ficam iguais */
-  object-fit: cover; /* corta sem distorcer */
-  display: block;
-}
-
-.item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-}
-
-.hint {
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin-top: 6px;
-}
-.carousel-text {
+/* CONTAINER CENTRAL: empilha logo + botão, centralizados */
+.central-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-  pointer-events: none; /* texto não bloqueia clique na imagem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centraliza horizontalmente os filhos */
+  justify-content: center;
+  gap: 20px;             /* espaçamento consistente entre logo e botão */
+  z-index: 10;           /* acima do vídeo */
+  pointer-events: auto;  /* permite clique no botão */
+  padding: 0 16px;       /* evita colar nas bordas em telas muito pequenas */
 }
+
+/* LOGO */
+.logo {
+  width: clamp(180px, 50vw, 500px); /* cresce de forma responsiva */
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.35));
+}
+
+/* GARANTE QUE O BOTÃO HERDE O ALINHAMENTO DO CONTAINER */
+.btn-servicos {
+  margin: 0;                /* remove o margin: 50px auto anterior */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.central-container {
+  animation: fadeInLogo 2s ease forwards;
+}
+/* Aumenta o logo em telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+  .logo {
+    width: 300px; /* ou o tamanho que quiser */
+    /* permite usar mais espaço da tela */
+  }
+}
+
+/* === CABEÇALHO FIXO COM LOGO + TEXTO === */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0C4C66;
+  color: white;
+  padding: 15px 30px;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* CONTAINER PRINCIPAL DO HEADER */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* conteúdo no canto esquerdo */
+}
+
+/* GRUPO DO LOGO + TEXTO */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* distância entre logo e texto */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover {
+  transform: scale(1.07); /* efeito de zoom leve ao passar o mouse */
+}
+
+/* LOGO */
+.logo-header {
+  width: 70px;
+  height: auto;
+}
+
+/* TÍTULO */
+.brand h3 {
+  font-size: 18px;
+  font-weight: 60;
+  color: white;
+}
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  .logo-header {
+    width: 45px;
+  }
+
+  .brand h3 {
+    font-size: 16px;
+  }
+}
+
+.servico-item {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.servico-item:hover {
+  transform: scale(1.05);
+}
+
+/* ===== CONTEÚDO REFORMAS ===== */
+.reforma-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hero section */
+.hero-reforma {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.hero-texto {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-texto h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #0a2e4d;
+}
+
+.hero-texto p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.hero-imagem {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-imagem img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+.cards-reforma {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card {
+  flex: 1 1 calc(33.33% - 20px);
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #0a2e4d;
+}
+
+@media (max-width: 768px) {
+  .hero-reforma {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+}
+/* ===== BANNER PRINCIPAL ===== */
+.banner-reforma {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-image: url("../assets/imagens/reforma-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-texto {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  max-width: 700px;
+}
+
+.banner-texto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.banner-texto p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.botao-banner {
+  display: inline-block;
+  background-color: #0a2e4d;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao-banner:hover {
+  background-color: #0f4572;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .banner-texto h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner-texto p {
+    font-size: 1rem;
+  }
+}
+

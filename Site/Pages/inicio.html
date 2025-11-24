@@ -1,36 +1,218 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Carrossel-menu (3 itens visíveis)</title>
-  <link rel="stylesheet" href="inicio.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+  <title>Fortune Solutions - Reformas</title>
+
+  <link rel="stylesheet" href="../Style/inicio.css" />
 </head>
+
 <body>
 
-  <section class="carrossel-menu">
-  <div id="carrossel" class="menu-itens" tabindex="0" aria-label="Carrossel de imagens">
-    <div class="item">
-      <img src="../assets/imagens/images.jpg" alt="Casa 1">
-      <div class="carousel-text">COMPRA E VENDA</div>
+  <!-- === CABEÇALHO === -->
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header" />
+        <h3>Fortune Solutions</h3>
+      </div>
+      
     </div>
-    <div class="item">
-      <img src="../assets/imagens/images3.jpg" alt="Casa 2">
-      <div class="carousel-text">REFORMA</div>
+    
+  </header>
+
+
+  <!-- === BANNER === -->
+  <section class="banner-reforma">
+    <div class="banner-overlay">
+      
+      <h1>Reformas e Construções</h1>
+      <p>Transformamos seu imóvel com qualidade, segurança e compromisso.</p>
+      <a href="#servicos" class="botao-banner">Solicitar Orçamento</a>
     </div>
-    <div class="item">
-      <img src="../assets/imagens/images.jpg" alt="Casa 3">
-      <div class="carousel-text">SEGUROS</div>
-    </div>
-    <div class="item">
-      <img src="../assets/imagens/images3.jpg" alt="Casa 4">
-      <div class="carousel-text">ALUGUEL</div>
-    </div>
+  </section>
+
+  <!-- === SERVIÇOS === -->
+  <main id="servicos" class="reforma-container">
+<h2>Conheça nosso serviços</h2>
+    <section class="cards-reforma">
+
+  <div class="card" data-galeria="completa">
+    <img src="../assets/imagens/casa/casa1.jpg" alt="Reforma Completa">
+    <h3>Reforma Completa</h3>
   </div>
-  <div class="hint">Passe o mouse nas laterais para rolar</div>
+
+  <div class="card" data-galeria="pintura">
+    <img src="../assets/imagens/casa/casa5.jpg" alt="Pintura e Acabamento">
+    <h3>Pintura & Acabamento</h3>
+  </div>
+
+  <div class="card" data-galeria="personalizados">
+    <img src="../assets/imagens/casa/casa4.jpg" alt="Projetos Personalizados">
+    <h3>Projetos Personalizados</h3>
+  </div>
+
 </section>
 
 
-  <script src="script.js"></script>
+    <!-- === MODAL GALERIA === -->
+    <div id="modalGaleria" class="modal-galeria">
+      <div class="modal-fullscreen">
+
+        <span class="close-modal">&times;</span>
+
+        <div class="imagem-principal-area">
+<div class="legenda-overlay">
+            <span id="legendaFoto"></span>
+          </div>
+          <!-- IMAGEM PRINCIPAL -->
+          <img id="imagemGrande" src="" alt="Imagem selecionada" />
+
+          
+
+          <!-- BOTÃO DE ORÇAMENTO -->
+          <div class="orcamento-wrapper">
+            <a href="#contato" class="btn-orcamento">Faça seu orçamento!!</a>
+          </div>
+
+          <!-- NAVEGAÇÃO -->
+          <button id="prevBtn" class="nav-btn">&#10094;</button>
+          <button id="nextBtn" class="nav-btn">&#10095;</button>
+
+        </div>
+
+        <!-- MINIATURAS -->
+        <div class="miniaturas-scroll" id="galeriaMiniaturas"></div>
+      </div>
+    </div>
+
+    <!-- === SERVIÇOS DETALHADOS === -->
+    <section class="servicos-detalhados">
+      <h2>Mais detalhes sobre nossos serviços</h2>
+<section class="menu-expansivo">
+
+  <div class="item">
+    <button class="titulo">Reforma Completa</button>
+    <div class="conteudo">
+      <img src="../assets/imagens/reforma1.jpg" alt="">
+      <p>Detalhes sobre reforma completa, materiais, prazos e orçamento.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <button class="titulo">Pintura & Acabamento</button>
+    <div class="conteudo">
+      <img src="../assets/imagens/pintura.jpg" alt="">
+      <p>Informações sobre pintura interna, externa e acabamentos especiais.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <button class="titulo">Projetos Personalizados</button>
+    <div class="conteudo">
+      <img src="../assets/imagens/personalizados.jpg" alt="">
+      <p>Serviços exclusivos criados sob medida para o seu projeto.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <button class="titulo">Reformas Estruturais</button>
+    <div class="conteudo">
+      <img src="../assets/imagens/images.jpg" alt="">
+      <p>Alterações estruturais, demolições controladas e reforços.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <button class="titulo">Orçamentos e Visitas Técnicas</button>
+    <div class="conteudo">
+      <img src="../assets/imagens/orcamento.jpg" alt="">
+      <p>Como funciona a visita técnica, valores e condições.</p>
+    </div>
+  </div>
+
+</section>
+
+
+      <div class="servicos-lista">
+
+        <div class="servico-item">
+          <h3>Reforma Estrutural</h3>
+          <p><strong>Descrição:</strong> Reforço de lajes, demolições controladas, novas alvenarias.</p>
+          <p><strong>Condições:</strong> Orçamento mediante visita técnica.</p>
+        </div>
+
+        <div class="servico-item">
+          <h3>Reforma de Acabamento</h3>
+          <p><strong>Descrição:</strong> Pintura, revestimentos, pisos e iluminação.</p>
+          <p><strong>Condições:</strong> Garantia de até 2 anos.</p>
+        </div>
+
+        <div class="servico-item">
+          <h3>Projetos Personalizados</h3>
+          <p><strong>Descrição:</strong> Planejamento de interiores e otimização de espaços.</p>
+          <p><strong>Condições:</strong> Pagamento dividido por etapas.</p>
+        </div>
+
+        <div class="servico-item">
+          <h3>Serviços Rápidos</h3>
+          <p><strong>Descrição:</strong> Reparos, pintura rápida, elétrica e hidráulica.</p>
+          <p><strong>Condições:</strong> Atendimento rápido e facilitado.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- === RODAPÉ === -->
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Fortune Solutions - Todos os direitos reservados.</p>
+
+      <div class="social-icons">
+        <a href="#" target="_blank"><img src="" alt="Instagram"></a>
+        <a href="#" target="_blank"><img src="" alt="YouTube"></a>
+        <a href="#" target="_blank"><img src="" alt="WhatsApp"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- === CHATBOT === -->
+  <div class="chatbot-container" id="chatBotContainer">
+
+    <div class="chatbot-header" id="chatToggle">
+      <span><i class="bi bi-headset"></i></span>
+    </div>
+
+    <div class="chatbot-window" id="chatWindow">
+
+      <div id="chatHeader" class="chat-header">
+        <span>Atendimento Fortune</span>
+
+        <div class="chat-buttons">
+          <button id="minimizeChat">–</button>
+          <button id="closeChat">×</button>
+        </div>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Digite sua resposta..." />
+        <button id="sendBtn">Enviar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="../script/script.js"></script>
+
 </body>
 </html>
