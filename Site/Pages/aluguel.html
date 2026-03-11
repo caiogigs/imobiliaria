@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fortune Solutions: aluguel de imóveis com atendimento consultivo, praticidade e suporte em todas as etapas da locação." />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Fortune Solutions - Aluguel de Imóveis</title>
+
+  <link rel="stylesheet" href="../Style/aluguel.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="../Pages/Index.html" aria-label="Ir para a página inicial">
+        <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header" />
+        <h3>Fortune Solutions</h3>
+      </a>
+
+      <div class="header-actions">
+        <a class="header-cta" href="#contato">
+          <i class="bi bi-whatsapp"></i>
+          Fale conosco
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero-aluguel" aria-label="Banner principal">
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <span class="hero-badge">Locação & Atendimento</span>
+        <h1>Aluguel de imóveis com mais praticidade e segurança</h1>
+        <p>Encontre opções para morar ou anunciar seu imóvel para locação com acompanhamento claro, organizado e focado na sua necessidade.</p>
+
+        <div class="hero-actions">
+          <a href="#servicos" class="btn btn-warning btn-lg hero-btn">Ver serviços</a>
+          <a href="#contato" class="btn btn-outline-light btn-lg hero-btn">Solicitar atendimento</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight">
+            <i class="bi bi-house-door"></i>
+            <span>Imóveis para locação</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-file-earmark-check"></i>
+            <span>Orientação nas etapas</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-people"></i>
+            <span>Atendimento personalizado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAV STICKY -->
+  <nav class="section-nav" aria-label="Navegação da página">
+    <div class="container nav-wrap">
+      <a href="#servicos" class="nav-pill"><i class="bi bi-grid-3x3-gap"></i> Serviços</a>
+      <a href="#portfolio" class="nav-pill"><i class="bi bi-images"></i> Portfólio</a>
+      <a href="#faq" class="nav-pill"><i class="bi bi-question-circle"></i> Dúvidas</a>
+      <a href="#contato" class="nav-pill"><i class="bi bi-telephone"></i> Contato</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- SERVIÇOS PRINCIPAIS -->
+    <section id="servicos" class="container section">
+      <header class="section-header">
+        <h2>Principais soluções</h2>
+        <p>Conheça as frentes de atuação no aluguel de imóveis.</p>
+      </header>
+
+      <div class="cards-reforma" id="portfolio">
+        <button class="card card-portfolio" type="button" data-galeria="completa" aria-label="Abrir galeria de imóveis residenciais para aluguel">
+          <img src="../assets/imagens/aluguel/aluguel1.jpg" alt="Imóvel residencial para aluguel" loading="lazy">
+          <div class="card-body">
+            <h3>Locação Residencial</h3>
+            <p>Opções para quem busca praticidade e conforto para morar.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="pintura" aria-label="Abrir galeria de imóveis comerciais para aluguel">
+          <img src="../assets/imagens/aluguel/aluguel2.jpg" alt="Imóvel comercial para aluguel" loading="lazy">
+          <div class="card-body">
+            <h3>Locação Comercial</h3>
+            <p>Espaços para empresas, escritórios e negócios diversos.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="personalizados" aria-label="Abrir galeria de atendimento personalizado para aluguel">
+          <img src="../assets/imagens/aluguel/aluguel3.jpg" alt="Atendimento personalizado para aluguel" loading="lazy">
+          <div class="card-body">
+            <h3>Atendimento Personalizado</h3>
+            <p>Busca orientada conforme perfil, localização e orçamento.</p>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- MODAL GALERIA -->
+    <div id="modalGaleria" class="modal-galeria" role="dialog" aria-modal="true" aria-label="Galeria de imagens">
+      <div class="modal-fullscreen">
+        <button class="close-modal" type="button" aria-label="Fechar galeria">&times;</button>
+
+        <div class="imagem-principal-area">
+          <div class="legenda-overlay">
+            <span id="legendaFoto"></span>
+          </div>
+
+          <img id="imagemGrande" src="" alt="Imagem selecionada" />
+
+          <div class="orcamento-wrapper">
+            <a href="#contato" class="btn-orcamento">Solicitar atendimento</a>
+          </div>
+
+          <button id="prevBtn" class="nav-btn" type="button" aria-label="Imagem anterior">&#10094;</button>
+          <button id="nextBtn" class="nav-btn" type="button" aria-label="Próxima imagem">&#10095;</button>
+        </div>
+
+        <div class="miniaturas-scroll" id="galeriaMiniaturas" aria-label="Miniaturas da galeria"></div>
+      </div>
+    </div>
+
+    <!-- LISTA DE SERVIÇOS -->
+    <section class="container section">
+      <header class="section-header">
+        <h2>Como podemos ajudar</h2>
+        <p>Detalhes sobre os serviços de aluguel. Clique para abrir.</p>
+      </header>
+
+      <div class="servicos-lista">
+        <button class="servico-item" type="button" data-modal="modal1" aria-label="Abrir detalhes de locação residencial">
+          <h3>Locação Residencial</h3>
+          <p><strong>Descrição:</strong> Apoio para encontrar imóveis residenciais para aluguel.</p>
+          <p><strong>Condições:</strong> Atendimento conforme perfil e necessidade.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal2" aria-label="Abrir detalhes de locação comercial">
+          <h3>Locação Comercial</h3>
+          <p><strong>Descrição:</strong> Busca de espaços para instalação ou expansão do seu negócio.</p>
+          <p><strong>Condições:</strong> Atendimento consultivo e direcionado.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal3" aria-label="Abrir detalhes de apoio ao proprietário">
+          <h3>Apoio ao Proprietário</h3>
+          <p><strong>Descrição:</strong> Orientação para anunciar imóveis para locação.</p>
+          <p><strong>Condições:</strong> Suporte informativo para facilitar o processo.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal4" aria-label="Abrir detalhes de consultoria para locação">
+          <h3>Consultoria para Locação</h3>
+          <p><strong>Descrição:</strong> Atendimento personalizado para esclarecer dúvidas sobre aluguel.</p>
+          <p><strong>Condições:</strong> Suporte conforme o perfil do cliente.</p>
+        </button>
+      </div>
+
+      <!-- MODAL 1 -->
+      <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Locação Residencial</h2>
+            <p>Mais clareza e praticidade para encontrar o imóvel ideal para morar.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#item-1">Visão geral</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-1">Perfil do imóvel</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-2">Localização</a>
+                <a class="nav-link mt-2" href="#item-2">Etapas</a>
+                <a class="nav-link mt-2" href="#item-3">Orientações</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="item-1"><h4>Visão geral</h4><p>Atendimento para quem busca imóveis para morar com mais praticidade e alinhamento ao seu perfil.</p></div>
+              <div id="item-1-1"><h5>Perfil do imóvel</h5><p>Definição de tamanho, quantidade de cômodos, faixa de valor e preferências principais.</p></div>
+              <div id="item-1-2"><h5>Localização</h5><p>Busca conforme regiões de interesse, mobilidade e necessidade do cliente.</p></div>
+              <div id="item-2"><h4>Etapas</h4><p>Entendimento do perfil → apresentação de opções → visitas → alinhamento das informações → atendimento final.</p></div>
+              <div id="item-3"><h4>Orientações</h4><p>Suporte para esclarecer dúvidas sobre o processo de locação antes de avançar.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <!-- MODAL 2 -->
+      <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Locação Comercial</h2>
+            <p>Soluções para quem busca um ponto comercial, escritório ou espaço profissional.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#com-1">Objetivo</a>
+                <a class="nav-link" href="#com-2">Perfil do espaço</a>
+                <a class="nav-link" href="#com-3">Atendimento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="com-1"><h4>Objetivo</h4><p>Identificação do tipo de imóvel mais adequado ao segmento e momento do negócio.</p></div>
+              <div id="com-2"><h4>Perfil do espaço</h4><p>Análise de localização, estrutura, visibilidade e adequação ao uso pretendido.</p></div>
+              <div id="com-3"><h4>Atendimento</h4><p>Suporte para direcionar a escolha de um imóvel comercial mais alinhado ao seu objetivo.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <!-- MODAL 3 -->
+      <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Apoio ao Proprietário</h2>
+            <p>Orientação para proprietários que desejam disponibilizar imóveis para aluguel.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#prop-1">Apresentação</a>
+                <a class="nav-link ms-3 my-1" href="#prop-1-1">Informações do imóvel</a>
+                <a class="nav-link ms-3 my-1" href="#prop-1-2">Perfil desejado</a>
+                <a class="nav-link mt-2" href="#prop-2">Etapas</a>
+                <a class="nav-link mt-2" href="#prop-3">Acompanhamento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="prop-1"><h4>Apresentação</h4><p>Suporte para organizar as informações principais do imóvel destinado à locação.</p></div>
+              <div id="prop-1-1"><h5>Informações do imóvel</h5><p>Características, localização, diferenciais e condições gerais do imóvel.</p></div>
+              <div id="prop-1-2"><h5>Perfil desejado</h5><p>Entendimento do perfil de locação e das preferências do proprietário.</p></div>
+              <div id="prop-2"><h4>Etapas</h4><p>Organização das informações → apresentação do imóvel → alinhamento com interessados.</p></div>
+              <div id="prop-3"><h4>Acompanhamento</h4><p>Atendimento informativo para facilitar a comunicação e o entendimento do processo.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <!-- MODAL 4 -->
+      <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Consultoria para Locação</h2>
+            <p>Esclarecimento de dúvidas e direcionamento para locatários e proprietários.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#cons-1">Perfil</a>
+                <a class="nav-link" href="#cons-2">Necessidade</a>
+                <a class="nav-link" href="#cons-3">Direcionamento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="cons-1"><h4>Perfil</h4><p>Entendimento do momento e objetivo de quem quer alugar ou anunciar um imóvel.</p></div>
+              <div id="cons-2"><h4>Necessidade</h4><p>Alinhamento das prioridades para facilitar a busca ou apresentação do imóvel.</p></div>
+              <div id="cons-3"><h4>Direcionamento</h4><p>Mais clareza para seguir com o atendimento de forma segura e organizada.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="container section">
+      <header class="section-header">
+        <h2>Dúvidas frequentes</h2>
+        <p>Respostas rápidas para dúvidas comuns sobre aluguel de imóveis.</p>
+      </header>
+
+      <section class="menu-expansivo" aria-label="Perguntas frequentes">
+        <div class="item">
+          <button class="titulo" type="button">Como funciona o atendimento para quem quer alugar um imóvel?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/aluguel/aluguel1.jpg" alt="Atendimento para aluguel residencial" loading="lazy">
+            <p>Primeiro entendemos seu perfil, região de interesse, faixa de valor e necessidade. Depois o atendimento é direcionado para apresentar opções mais compatíveis.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Vocês também atendem imóveis comerciais?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/aluguel/aluguel2.jpg" alt="Atendimento para aluguel comercial" loading="lazy">
+            <p>Sim. A página contempla locação comercial para quem busca salas, pontos comerciais e outros espaços profissionais.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Posso anunciar meu imóvel para aluguel?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/aluguel/aluguel3.jpg" alt="Apoio ao proprietário" loading="lazy">
+            <p>Sim. O atendimento também considera proprietários que desejam disponibilizar seus imóveis para locação e esclarecer dúvidas sobre o processo.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Esta página permite fechar contrato online?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/aluguel/aluguel4.jpg" alt="Atendimento informativo para locação" loading="lazy">
+            <p>Não. Esta página tem caráter informativo, com foco em apresentar serviços, esclarecer dúvidas e facilitar o contato para atendimento personalizado.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="container section">
+      <header class="section-header">
+        <h2>Contato</h2>
+        <p>Fale com a Fortune Solutions e receba atendimento para aluguel de imóveis.</p>
+      </header>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <i class="bi bi-whatsapp"></i>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>Atendimento rápido para esclarecer dúvidas e iniciar seu atendimento.</p>
+          </div>
+        </div>
+
+        <a class="btn btn-warning btn-lg w-100" href="#" onclick="return false;">
+          Chamar no WhatsApp
+        </a>
+
+        <small class="contact-note">*Você pode ligar esse botão ao seu número/URL do WhatsApp.</small>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-row">
+        <div class="footer-left">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Outros Serviços:
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Pages/Index.html">Início</a></li>
+              <li><a class="dropdown-item" href="../Pages/reforma.html">Reformas</a></li>
+              <li><a class="dropdown-item" href="../Pages/compraevenda.html">Compra e Venda</a></li>
+              <li><a class="dropdown-item" href="#contato">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <a href="#" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2025 Fortune Solutions</p>
+    </div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div class="chatbot-container" id="chatBotContainer">
+    <div class="chatbot-header" id="chatToggle">
+      <span><i class="bi bi-headset"></i></span>
+    </div>
+
+    <div class="chatbot-window" id="chatWindow">
+      <div id="chatHeader" class="chat-header">
+        <span>Atendimento Fortune</span>
+        <div class="chat-buttons">
+          <button id="minimizeChat" type="button">–</button>
+          <button id="closeChat" type="button">×</button>
+        </div>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Digite sua resposta..." />
+        <button id="sendBtn" type="button">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script/aluguel.js"></script>
+</body>
+</html>

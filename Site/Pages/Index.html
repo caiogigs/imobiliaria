@@ -6,82 +6,80 @@
   <title>Fortune Solutions - Imobiliária</title>
   <link rel="stylesheet" href="../Style/style.css" />
 </head>
+
 <body>
-
-  
-  <header>
-  <div class="header-container">
-    <div class="brand">
-      <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header">
-      <h3>Fortune Solutions</h3>
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="./Index.html" aria-label="Ir para a página inicial">
+        <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header">
+        <h3>Fortune Solutions</h3>
+      </a>
     </div>
-  </div>
-</header>
+  </header>
 
-
-  
-
-  <!-- === VÍDEO DE FUNDO === -->
-  <video autoplay muted loop playsinline id="bg-video">
+  <!-- Vídeo de fundo -->
+  <video autoplay muted loop playsinline id="bg-video" aria-hidden="true">
     <source src="../assets/video/casas.mp4" type="video/mp4">
     Seu navegador não suporta vídeo em HTML5.
   </video>
 
-  <!-- === CONTAINER CENTRAL COM LOGO E BOTÃO === -->
-  <div class="central-container">
-    <img src="../assets/imagens/lg.png" alt="Logo da Imobiliária" class="logo">
-    <button class="btn-servicos" id="abrirModal">Selecione o serviço</button>
-  </div>
+  <!-- Conteúdo central -->
+  <main class="central-container">
+    <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo">
+    <button class="btn-servicos" id="abrirModal" type="button">
+      Selecione o serviço
+    </button>
+  </main>
 
-  <!-- === MODAL === -->
-  <div id="modalServicos" class="modal">
-    <div class="modal-content">
-      <span class="fechar" id="fecharModal">&times;</span>
-      <h2>Escolha um serviço</h2>
-      <div class="servicos-container">
-       <div class="servicos-container">
-  <a href="../Pages/inicio.html" class="servico-item">
-    <img src="../assets/imagens/images.jpg" alt="Reforma" />
-    <p>Reforma</p>
-  </a>
+  <!-- Modal -->
+  <div id="modalServicos" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+    <div class="modal-content" role="document">
+      <button class="fechar" id="fecharModal" type="button" aria-label="Fechar modal">×</button>
 
-  <a href="compraevenda.html" class="servico-item">
-    <img src="../assets/imagens/images3.jpg" alt="Compra e Venda" />
-    <p>Compra e Venda</p>
-  </a>
+      <h2 id="tituloModal">Escolha um serviço</h2>
 
-  <a href="seguros.html" class="servico-item">
-    <img src="../assets/imagens/images.jpg" alt="Seguros" />
-    <p>Seguros</p>
-  </a>
+      <!-- Etapa 1 -->
+      <div class="categorias-container" id="categoriasContainer">
+        <button class="categoria-item" id="btnServicosImobiliarios" type="button">
+          <span>Serviços Imobiliários</span>
+        </button>
 
-  <a href="aluguel.html" class="servico-item">
-    <img src="../assets/imagens/images3.jpg" alt="Aluguel" />
-    <p>Aluguel</p>
-  </a>
-</div>
+        <button class="categoria-item" id="btnOutrosServicos" type="button">
+          <span>Outros Serviços</span>
+        </button>
+      </div>
 
+      <!-- Etapa 2: imobiliária -->
+      <div class="grupo-servicos" id="grupoImobiliaria" hidden>
+        <button class="btn-voltar-servicos" id="voltarParaCategorias1" type="button">
+          ← Voltar
+        </button>
+
+        <div class="lista-servicos">
+          <a href="../Pages/compravenda.html" class="lista-servico-item">Compra e Venda</a>
+          <a href="../Pages/aluguel.html" class="lista-servico-item">Aluguel</a>
+        </div>
+      </div>
+
+      <!-- Etapa 2: outros -->
+      <div class="grupo-servicos" id="grupoOutros" hidden>
+        <button class="btn-voltar-servicos" id="voltarParaCategorias2" type="button">
+          ← Voltar
+        </button>
+
+        <div class="lista-servicos">
+          <a href="../Pages/reforma.html" class="lista-servico-item">Reforma</a>
+          <a href="../Pages/seguros.html" class="lista-servico-item">Seguros</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <footer>
+  <footer class="site-footer">
     <p>© 2025 Fortune Solutions - Todos os direitos reservados.</p>
   </footer>
 
-  <script src="script.js">
-    document.addEventListener('DOMContentLoaded', function() {
-      const video = document.getElementById('bg-video');
-      if (video) {
-        video.play().catch(() => {
-          document.body.addEventListener('touchstart', () => {
-            video.play();
-          }, { once: true });
-        });
-      }
-    });
-
-    
-  </script>
+  <!-- JS sempre no final -->
+  <script src="../script/script.js" defer></script>
 </body>
 </html>

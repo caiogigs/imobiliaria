@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fortune Solutions: compra e venda de imóveis com atendimento consultivo, segurança e acompanhamento em todas as etapas." />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Fortune Solutions - Compra e Venda</title>
+
+  <link rel="stylesheet" href="../Style/compravenda.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="../Pages/Index.html" aria-label="Ir para a página inicial">
+        <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header" />
+        <h3>Fortune Solutions</h3>
+      </a>
+
+      <div class="header-actions">
+        <a class="header-cta" href="#contato">
+          <i class="bi bi-whatsapp"></i>
+          Fale conosco
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero-compra-venda" aria-label="Banner principal">
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <span class="hero-badge">Compra & Venda de Imóveis</span>
+        <h1>Negócios imobiliários com segurança e estratégia</h1>
+        <p>Atendimento personalizado para quem deseja comprar, vender ou anunciar imóveis com mais confiança, agilidade e suporte em cada etapa.</p>
+
+        <div class="hero-actions">
+          <a href="#servicos" class="btn btn-warning btn-lg hero-btn">Ver serviços</a>
+          <a href="#contato" class="btn btn-outline-light btn-lg hero-btn">Solicitar atendimento</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight">
+            <i class="bi bi-house-check"></i>
+            <span>Imóveis selecionados</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Suporte documental</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-graph-up-arrow"></i>
+            <span>Negociação estratégica</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAV STICKY -->
+  <nav class="section-nav" aria-label="Navegação da página">
+    <div class="container nav-wrap">
+      <a href="#servicos" class="nav-pill"><i class="bi bi-grid-3x3-gap"></i> Serviços</a>
+      <a href="#portfolio" class="nav-pill"><i class="bi bi-images"></i> Portfólio</a>
+      <a href="#faq" class="nav-pill"><i class="bi bi-question-circle"></i> Dúvidas</a>
+      <a href="#contato" class="nav-pill"><i class="bi bi-telephone"></i> Contato</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- SERVIÇOS PRINCIPAIS -->
+    <section id="servicos" class="container section">
+      <header class="section-header">
+        <h2>Principais soluções</h2>
+        <p>Conheça as frentes de atuação na compra e venda de imóveis.</p>
+      </header>
+
+      <div class="cards-reforma" id="portfolio">
+        <button class="card card-portfolio" type="button" data-galeria="completa" aria-label="Abrir galeria de imóveis para compra">
+          <img src="../assets/imagens/imoveis/imovel1.jpg" alt="Imóvel disponível para compra" loading="lazy">
+          <div class="card-body">
+            <h3>Imóveis para Compra</h3>
+            <p>Opções para moradia ou investimento com apoio consultivo.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="pintura" aria-label="Abrir galeria de imóveis para venda">
+          <img src="../assets/imagens/imoveis/imovel2.jpg" alt="Imóvel em processo de venda" loading="lazy">
+          <div class="card-body">
+            <h3>Imóveis para Venda</h3>
+            <p>Divulgação, negociação e acompanhamento da venda do seu imóvel.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="personalizados" aria-label="Abrir galeria de atendimento personalizado">
+          <img src="../assets/imagens/imoveis/imovel3.jpg" alt="Atendimento imobiliário personalizado" loading="lazy">
+          <div class="card-body">
+            <h3>Atendimento Personalizado</h3>
+            <p>Busca orientada conforme perfil, objetivo e orçamento.</p>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- MODAL GALERIA -->
+    <div id="modalGaleria" class="modal-galeria" role="dialog" aria-modal="true" aria-label="Galeria de imagens">
+      <div class="modal-fullscreen">
+        <button class="close-modal" type="button" aria-label="Fechar galeria">&times;</button>
+
+        <div class="imagem-principal-area">
+          <div class="legenda-overlay">
+            <span id="legendaFoto"></span>
+          </div>
+
+          <img id="imagemGrande" src="" alt="Imagem selecionada" />
+
+          <div class="orcamento-wrapper">
+            <a href="#contato" class="btn-orcamento">Solicitar atendimento</a>
+          </div>
+
+          <button id="prevBtn" class="nav-btn" type="button" aria-label="Imagem anterior">&#10094;</button>
+          <button id="nextBtn" class="nav-btn" type="button" aria-label="Próxima imagem">&#10095;</button>
+        </div>
+
+        <div class="miniaturas-scroll" id="galeriaMiniaturas" aria-label="Miniaturas da galeria"></div>
+      </div>
+    </div>
+
+    <!-- LISTA DE SERVIÇOS -->
+    <section class="container section">
+      <header class="section-header">
+        <h2>Como podemos ajudar</h2>
+        <p>Detalhes sobre os serviços de compra e venda. Clique para abrir.</p>
+      </header>
+
+      <div class="servicos-lista">
+        <button class="servico-item" type="button" data-modal="modal1" aria-label="Abrir detalhes de compra de imóveis">
+          <h3>Compra de Imóveis</h3>
+          <p><strong>Descrição:</strong> Apoio na busca do imóvel ideal conforme perfil e orçamento.</p>
+          <p><strong>Condições:</strong> Atendimento consultivo em todas as etapas.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal2" aria-label="Abrir detalhes de venda de imóveis">
+          <h3>Venda de Imóveis</h3>
+          <p><strong>Descrição:</strong> Divulgação estratégica e condução da negociação.</p>
+          <p><strong>Condições:</strong> Avaliação e acompanhamento comercial.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal3" aria-label="Abrir detalhes de análise documental">
+          <h3>Análise Documental</h3>
+          <p><strong>Descrição:</strong> Orientação sobre documentos e etapas formais do processo.</p>
+          <p><strong>Condições:</strong> Verificação conforme a negociação.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal4" aria-label="Abrir detalhes de consultoria imobiliária">
+          <h3>Consultoria Imobiliária</h3>
+          <p><strong>Descrição:</strong> Atendimento personalizado para compra, venda e investimento.</p>
+          <p><strong>Condições:</strong> Suporte sob medida conforme necessidade.</p>
+        </button>
+      </div>
+
+      <!-- MODAL 1 -->
+      <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Compra de Imóveis</h2>
+            <p>Auxílio completo para encontrar o imóvel ideal com mais segurança e clareza.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#item-1">Visão geral</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-1">O que analisamos</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-2">Perfil do comprador</a>
+                <a class="nav-link mt-2" href="#item-2">Etapas</a>
+                <a class="nav-link mt-2" href="#item-3">Orientações</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="item-1"><h4>Visão geral</h4><p>Atendimento focado em entender sua necessidade e encontrar oportunidades compatíveis com seu objetivo.</p></div>
+              <div id="item-1-1"><h5>O que analisamos</h5><p>Localização, faixa de preço, perfil do imóvel, potencial de valorização e condição geral.</p></div>
+              <div id="item-1-2"><h5>Perfil do comprador</h5><p>Avaliação do seu momento, necessidade de moradia, investimento e planejamento financeiro.</p></div>
+              <div id="item-2"><h4>Etapas</h4><p>Entendimento do perfil → seleção de opções → visitas → negociação → acompanhamento do fechamento.</p></div>
+              <div id="item-3"><h4>Orientações</h4><p>Receba apoio para tomar uma decisão mais segura e alinhada ao que procura.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <!-- MODAL 2 -->
+      <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Venda de Imóveis</h2>
+            <p>Posicionamento do imóvel, atendimento aos interessados e condução da negociação.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#venda-1">Avaliação</a>
+                <a class="nav-link" href="#venda-2">Divulgação</a>
+                <a class="nav-link" href="#venda-3">Negociação</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="venda-1"><h4>Avaliação</h4><p>Entendimento do imóvel e análise do posicionamento no mercado.</p></div>
+              <div id="venda-2"><h4>Divulgação</h4><p>Apresentação do imóvel com foco em atrair compradores mais alinhados.</p></div>
+              <div id="venda-3"><h4>Negociação</h4><p>Acompanhamento das propostas e apoio para conduzir a venda com mais segurança.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <!-- MODAL 3 -->
+      <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Análise Documental</h2>
+            <p>Mais clareza sobre a documentação envolvida na compra e venda de imóveis.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#doc-1">Documentos</a>
+                <a class="nav-link ms-3 my-1" href="#doc-1-1">Imóvel</a>
+                <a class="nav-link ms-3 my-1" href="#doc-1-2">Partes envolvidas</a>
+                <a class="nav-link mt-2" href="#doc-2">Etapas</a>
+                <a class="nav-link mt-2" href="#doc-3">Atenção</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="doc-1"><h4>Documentos</h4><p>Orientação sobre os documentos normalmente analisados em uma negociação imobiliária.</p></div>
+              <div id="doc-1-1"><h5>Imóvel</h5><p>Verificação de informações cadastrais e documentos relacionados ao bem negociado.</p></div>
+              <div id="doc-1-2"><h5>Partes envolvidas</h5><p>Conferência das informações necessárias para avançar com mais tranquilidade.</p></div>
+              <div id="doc-2"><h4>Etapas</h4><p>Organização documental, conferência inicial e alinhamento para o andamento do processo.</p></div>
+              <div id="doc-3"><h4>Atenção</h4><p>Cada negociação pode exigir análises específicas conforme o perfil do imóvel e das partes.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <!-- MODAL 4 -->
+      <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Consultoria Imobiliária</h2>
+            <p>Suporte estratégico para quem deseja comprar, vender ou investir melhor.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#cons-1">Objetivos</a>
+                <a class="nav-link" href="#cons-2">Perfil</a>
+                <a class="nav-link" href="#cons-3">Direcionamento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="cons-1"><h4>Objetivos</h4><p>Entendimento do seu objetivo principal: moradia, revenda, locação ou investimento.</p></div>
+              <div id="cons-2"><h4>Perfil</h4><p>Análise do seu momento e das melhores possibilidades dentro da sua realidade.</p></div>
+              <div id="cons-3"><h4>Direcionamento</h4><p>Mais clareza para tomar decisões com apoio técnico e comercial.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="container section">
+      <header class="section-header">
+        <h2>Dúvidas frequentes</h2>
+        <p>Respostas rápidas para dúvidas comuns sobre compra e venda de imóveis.</p>
+      </header>
+
+      <section class="menu-expansivo" aria-label="Perguntas frequentes">
+        <div class="item">
+          <button class="titulo" type="button">Como funciona o atendimento para compra de imóvel?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/imoveis/imovel1.jpg" alt="Atendimento para compra de imóvel" loading="lazy">
+            <p>Primeiro entendemos seu perfil, faixa de investimento e objetivo. Depois apresentamos opções compatíveis e acompanhamos o processo até a negociação.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Vocês ajudam na venda do meu imóvel?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/imoveis/imovel2.jpg" alt="Venda de imóvel" loading="lazy">
+            <p>Sim. O trabalho envolve apresentação comercial, atendimento de interessados e condução da negociação com acompanhamento mais organizado.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Posso receber orientação antes de tomar a decisão?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/imoveis/imovel3.jpg" alt="Consultoria imobiliária" loading="lazy">
+            <p>Sim. A consultoria ajuda a entender melhor as oportunidades, riscos e caminhos mais adequados antes de comprar ou vender.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">A página permite fechar negócio online?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/imoveis/imovel4.jpg" alt="Atendimento imobiliário online" loading="lazy">
+            <p>Esta página tem caráter informativo. O objetivo é esclarecer dúvidas e facilitar o contato para atendimento personalizado.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="container section">
+      <header class="section-header">
+        <h2>Contato</h2>
+        <p>Fale com a Fortune Solutions e receba atendimento para compra ou venda do seu imóvel.</p>
+      </header>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <i class="bi bi-whatsapp"></i>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>Atendimento rápido para esclarecer dúvidas e iniciar seu atendimento.</p>
+          </div>
+        </div>
+
+        <a class="btn btn-warning btn-lg w-100" href="#" onclick="return false;">
+          Chamar no WhatsApp
+        </a>
+
+        <small class="contact-note">número/URL do WhatsApp.</small>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-row">
+        <div class="footer-left">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Outros Serviços:
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Pages/Index.html">Início</a></li>
+              <li><a class="dropdown-item" href="../Pages/reforma.html">Reformas</a></li>
+              <li><a class="dropdown-item" href="../Pages/seguros.html">Seguros</a></li>
+              <li><a class="dropdown-item" href="#contato">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <a href="#" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2025 Fortune Solutions</p>
+    </div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div class="chatbot-container" id="chatBotContainer">
+    <div class="chatbot-header" id="chatToggle">
+      <span><i class="bi bi-headset"></i></span>
+    </div>
+
+    <div class="chatbot-window" id="chatWindow">
+      <div id="chatHeader" class="chat-header">
+        <span>Atendimento Fortune</span>
+        <div class="chat-buttons">
+          <button id="minimizeChat" type="button">–</button>
+          <button id="closeChat" type="button">×</button>
+        </div>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Digite sua resposta..." />
+        <button id="sendBtn" type="button">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script/compravenda.js"></script>
+</body>
+</html>

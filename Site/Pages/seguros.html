@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Fortune Solutions - Seguros</title>
+
+  <!-- CSS da página -->
+  <link rel="stylesheet" href="../Style/seguros.css" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-container">
+      <a class="brand" href="../Pages/Index.html" aria-label="Voltar para a página inicial">
+        <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header" />
+        <h3>Fortune Solutions</h3>
+      </a>
+
+      <nav class="top-nav" aria-label="Navegação principal">
+        <a href="#planos">Planos</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="btn-top-cta" href="#contato">Solicitar cotação</a>
+    </div>
+  </header>
+
+  <!-- ===== HERO / BANNER ===== -->
+  <section class="banner-seguros" role="banner" aria-label="Banner Seguros">
+    <div class="banner-overlay">
+      <div class="banner-content">
+        <span class="badge-hero"><i class="bi bi-shield-check"></i> Seguros imobiliários</span>
+        <h1>Proteja seu patrimônio com tranquilidade.</h1>
+        <p>
+          Planos sob medida para quem compra, aluga ou administra imóveis.
+          Coberturas essenciais, contratação simples e atendimento rápido.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#planos" class="botao-banner">Ver planos</a>
+          <a href="#contato" class="botao-secundario">Falar com especialista</a>
+        </div>
+
+        <div class="hero-metrics" aria-label="Destaques">
+          <div class="metric">
+            <strong>+20</strong>
+            <span>Coberturas</span>
+          </div>
+          <div class="metric">
+            <strong>Atendimento</strong>
+            <span>Rápido e humano</span>
+          </div>
+          <div class="metric">
+            <strong>Seguro</strong>
+            <span>Para aluguel e compra</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÕES (atalhos) ===== -->
+  <section class="quick-links" aria-label="Atalhos">
+    <a class="quick-link" href="#planos"><i class="bi bi-grid-3x3-gap"></i> Planos</a>
+    <a class="quick-link" href="#beneficios"><i class="bi bi-stars"></i> Benefícios</a>
+    <a class="quick-link" href="#duvidas"><i class="bi bi-patch-question"></i> Dúvidas</a>
+    <a class="quick-link" href="#contato"><i class="bi bi-chat-dots"></i> Contato</a>
+  </section>
+
+  <main class="container-page">
+
+    <!-- ===== PLANOS (cards + galeria) ===== -->
+    <section id="planos" class="section">
+      <div class="section-head">
+        <h2>Planos de seguro</h2>
+        <p>Escolha o plano ideal e veja exemplos de coberturas e situações atendidas.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card" data-galeria="seguro_residencial">
+          <img src="../assets/imagens/casa/casa1.jpg" alt="Seguro Residencial">
+          <div class="card-body">
+            <h3>Seguro Residencial</h3>
+            <p>Proteção contra danos, imprevistos e assistência 24h.</p>
+            <span class="card-tag">Mais contratado</span>
+          </div>
+        </div>
+
+        <div class="card" data-galeria="seguro_aluguel">
+          <img src="../assets/imagens/casa/casa5.jpg" alt="Seguro Aluguel">
+          <div class="card-body">
+            <h3>Seguro Aluguel</h3>
+            <p>Alternativa ao fiador com análise simples e segura.</p>
+            <span class="card-tag">Sem burocracia</span>
+          </div>
+        </div>
+
+        <div class="card" data-galeria="seguro_condominio">
+          <img src="../assets/imagens/casa/casa4.jpg" alt="Seguro Condomínio">
+          <div class="card-body">
+            <h3>Seguro Condomínio</h3>
+            <p>Coberturas essenciais para áreas comuns e responsabilidade.</p>
+            <span class="card-tag">Gestão profissional</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MODAL GALERIA (reutiliza o mesmo do seu projeto) ===== -->
+    <div id="modalGaleria" class="modal-galeria" aria-hidden="true">
+      <div class="modal-fullscreen" role="dialog" aria-modal="true" aria-label="Galeria de imagens">
+
+        <button class="close-modal" aria-label="Fechar galeria">&times;</button>
+
+        <div class="imagem-principal-area">
+          <div class="legenda-overlay">
+            <span id="legendaFoto"></span>
+          </div>
+
+          <img id="imagemGrande" src="" alt="Imagem selecionada" />
+
+          <div class="orcamento-wrapper">
+            <a href="#contato" class="btn-orcamento">Solicitar cotação agora</a>
+          </div>
+
+          <button id="prevBtn" class="nav-btn" aria-label="Anterior">&#10094;</button>
+          <button id="nextBtn" class="nav-btn" aria-label="Próximo">&#10095;</button>
+        </div>
+
+        <div class="miniaturas-scroll" id="galeriaMiniaturas"></div>
+      </div>
+    </div>
+
+    <!-- ===== BENEFÍCIOS ===== -->
+    <section id="beneficios" class="section">
+      <div class="section-head">
+        <h2>Por que fazer seguro com a Fortune?</h2>
+        <p>Uma experiência clara, rápida e com foco em segurança e confiança.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit">
+          <i class="bi bi-lightning-charge"></i>
+          <h3>Contratação rápida</h3>
+          <p>Processo direto e sem enrolação, com suporte do início ao fim.</p>
+        </div>
+        <div class="benefit">
+          <i class="bi bi-headset"></i>
+          <h3>Atendimento humano</h3>
+          <p>Fale com alguém que resolve. Nada de ficar perdido em chatbot.</p>
+        </div>
+        <div class="benefit">
+          <i class="bi bi-shield-lock"></i>
+          <h3>Coberturas sob medida</h3>
+          <p>Você paga pelo que faz sentido para seu imóvel e sua realidade.</p>
+        </div>
+        <div class="benefit">
+          <i class="bi bi-building-check"></i>
+          <h3>Foco imobiliário</h3>
+          <p>Planos pensados para compra, aluguel, condomínio e administração.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DÚVIDAS (FAQ) ===== -->
+    <section id="duvidas" class="section">
+      <div class="section-head">
+        <h2>Dúvidas frequentes</h2>
+        <p>Respostas diretas para você entender e contratar com confiança.</p>
+      </div>
+
+      <section class="menu-expansivo" aria-label="Perguntas frequentes">
+        <div class="item">
+          <button class="titulo">O seguro residencial cobre o quê?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/reforma1.jpg" alt="">
+            <p>Depende do plano, mas geralmente inclui danos elétricos, incêndio, vendaval e assistência 24h (chaveiro, encanador, etc.).</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo">Seguro aluguel substitui fiador?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/orcamento.jpg" alt="">
+            <p>Sim. É uma alternativa ao fiador/caução e ajuda a deixar a locação mais rápida e segura para ambas as partes.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo">Como funciona a cotação?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/images.jpg" alt="">
+            <p>Você informa dados básicos do imóvel e da necessidade. Nós retornamos com opções e explicamos as diferenças sem “letra miúda”.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo">Qual o prazo para ativação do seguro?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/pintura.jpg" alt="">
+            <p>Normalmente é rápido após a confirmação/contratação. Alguns seguros podem exigir análise dependendo do tipo.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ===== SERVIÇOS (cards que abrem modais) ===== -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Serviços e coberturas</h2>
+        <p>Clique para ver detalhes e recomendações de cada opção.</p>
+      </div>
+
+      <div class="servicos-lista">
+        <div class="servico-item" data-modal="modal1">
+          <h3>Seguro Residencial (Completo)</h3>
+          <p><strong>Descrição:</strong> Coberturas essenciais + assistências.</p>
+          <p><strong>Indicado:</strong> Casa ou apartamento.</p>
+        </div>
+
+        <div class="servico-item" data-modal="modal2">
+          <h3>Seguro Aluguel (Fiança)</h3>
+          <p><strong>Descrição:</strong> Alternativa ao fiador/caução.</p>
+          <p><strong>Indicado:</strong> Locatários e proprietários.</p>
+        </div>
+
+        <div class="servico-item" data-modal="modal3">
+          <h3>Seguro Condomínio</h3>
+          <p><strong>Descrição:</strong> Protege áreas comuns e responsabilidades.</p>
+          <p><strong>Indicado:</strong> Síndicos e administradoras.</p>
+        </div>
+
+        <div class="servico-item" data-modal="modal4">
+          <h3>Seguro Personalizado</h3>
+          <p><strong>Descrição:</strong> Plano conforme seu risco e perfil.</p>
+          <p><strong>Indicado:</strong> Imóveis especiais.</p>
+        </div>
+      </div>
+
+      <!-- ===== MODAIS ===== -->
+      <div id="modal1" class="modal">
+        <div class="modal-content modal-large">
+          <button class="close" aria-label="Fechar modal">&times;</button>
+          <div class="modal-header-area">
+            <h2>Seguro Residencial</h2>
+            <p>Ideal para proteger seu imóvel e seus bens com assistência 24h.</p>
+          </div>
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#m1-item-1">Coberturas</a>
+                <a class="nav-link" href="#m1-item-2">Assistências</a>
+                <a class="nav-link" href="#m1-item-3">Recomendação</a>
+              </nav>
+            </div>
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="m1-item-1">
+                <h4>Coberturas</h4>
+                <p>Incêndio, danos elétricos, vendaval, e outras coberturas conforme plano.</p>
+              </div>
+              <div id="m1-item-2">
+                <h4>Assistências</h4>
+                <p>Chaveiro, encanador, eletricista, vidraceiro e muito mais.</p>
+              </div>
+              <div id="m1-item-3">
+                <h4>Recomendação</h4>
+                <p>Para quem quer tranquilidade no dia a dia e previsibilidade em imprevistos.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contato" class="btn-orcamento">Solicitar cotação</a>
+        </div>
+      </div>
+
+      <div id="modal2" class="modal">
+        <div class="modal-content modal-large">
+          <button class="close" aria-label="Fechar modal">&times;</button>
+          <div class="modal-header-area">
+            <h2>Seguro Aluguel (Fiança)</h2>
+            <p>Mais agilidade na locação e mais segurança para ambas as partes.</p>
+          </div>
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#m2-item-1">Como funciona</a>
+                <a class="nav-link" href="#m2-item-2">Vantagens</a>
+                <a class="nav-link" href="#m2-item-3">Documentos</a>
+              </nav>
+            </div>
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="m2-item-1">
+                <h4>Como funciona</h4>
+                <p>Substitui fiador/caução. Pode incluir cobertura de aluguel e encargos conforme contrato.</p>
+              </div>
+              <div id="m2-item-2">
+                <h4>Vantagens</h4>
+                <p>Processo mais rápido, previsível e com acompanhamento.</p>
+              </div>
+              <div id="m2-item-3">
+                <h4>Documentos</h4>
+                <p>Dados básicos do locatário e do imóvel para análise e proposta.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contato" class="btn-orcamento">Solicitar cotação</a>
+        </div>
+      </div>
+
+      <div id="modal3" class="modal">
+        <div class="modal-content modal-large">
+          <button class="close" aria-label="Fechar modal">&times;</button>
+          <div class="modal-header-area">
+            <h2>Seguro Condomínio</h2>
+            <p>Proteção para áreas comuns e responsabilidades do condomínio.</p>
+          </div>
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#m3-item-1">Essenciais</a>
+                <a class="nav-link" href="#m3-item-2">Responsabilidade</a>
+                <a class="nav-link" href="#m3-item-3">Dicas</a>
+              </nav>
+            </div>
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="m3-item-1">
+                <h4>Coberturas essenciais</h4>
+                <p>Incêndio, danos elétricos e eventos previstos na apólice.</p>
+              </div>
+              <div id="m3-item-2">
+                <h4>Responsabilidade</h4>
+                <p>Opções de responsabilidade civil conforme necessidade.</p>
+              </div>
+              <div id="m3-item-3">
+                <h4>Dicas</h4>
+                <p>Ideal para síndicos que querem gestão profissional e prevenção de riscos.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contato" class="btn-orcamento">Solicitar cotação</a>
+        </div>
+      </div>
+
+      <div id="modal4" class="modal">
+        <div class="modal-content modal-large">
+          <button class="close" aria-label="Fechar modal">&times;</button>
+          <div class="modal-header-area">
+            <h2>Seguro Personalizado</h2>
+            <p>Para imóveis especiais ou necessidades específicas.</p>
+          </div>
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#m4-item-1">Quando usar</a>
+                <a class="nav-link" href="#m4-item-2">O que avaliamos</a>
+                <a class="nav-link" href="#m4-item-3">Próximos passos</a>
+              </nav>
+            </div>
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="m4-item-1">
+                <h4>Quando usar</h4>
+                <p>Imóveis com alto valor, características específicas ou riscos particulares.</p>
+              </div>
+              <div id="m4-item-2">
+                <h4>O que avaliamos</h4>
+                <p>Localização, tipo de imóvel, finalidade, coberturas desejadas e perfil.</p>
+              </div>
+              <div id="m4-item-3">
+                <h4>Próximos passos</h4>
+                <p>Você passa as informações e nós montamos 2–3 opções bem explicadas para você escolher.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contato" class="btn-orcamento">Solicitar cotação</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato" class="section">
+      <div class="section-head">
+        <h2>Solicite uma cotação</h2>
+        <p>Preencha o básico e nós retornamos com as melhores opções para o seu caso.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-card" id="formCotacao">
+          <label>
+            Nome
+            <input type="text" name="nome" placeholder="Seu nome" required>
+          </label>
+          <label>
+            E-mail
+            <input type="email" name="email" placeholder="seuemail@exemplo.com" required>
+          </label>
+          <label>
+            Tipo de seguro
+            <select name="tipo" required>
+              <option value="">Selecione</option>
+              <option>Residencial</option>
+              <option>Aluguel (Fiança)</option>
+              <option>Condomínio</option>
+              <option>Personalizado</option>
+            </select>
+          </label>
+          <label>
+            Mensagem (opcional)
+            <textarea name="msg" rows="4" placeholder="Conte um pouco do que você precisa..."></textarea>
+          </label>
+
+          <button type="submit" class="btn-form">
+            Enviar e falar no WhatsApp <i class="bi bi-whatsapp"></i>
+          </button>
+
+          <small class="form-hint">Ao enviar, abriremos o WhatsApp com sua mensagem pronta.</small>
+        </form>
+
+        <div class="contact-info">
+          <div class="info-box">
+            <i class="bi bi-telephone"></i>
+            <div>
+              <strong>Atendimento</strong>
+              <p>Seg–Sex • 08:00–18:00</p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <i class="bi bi-geo-alt"></i>
+            <div>
+              <strong>Região</strong>
+              <p>Atendimento em toda a cidade</p>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <i class="bi bi-shield-check"></i>
+            <div>
+              <strong>Especialidade</strong>
+              <p>Seguros com foco imobiliário</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-row">
+        <div class="footer-left">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Outros Serviços:
+            </button>
+
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Pages/reforma.html">Reforma</a></li>
+              <li><a class="dropdown-item" href="../Pages/inicio.html">Imobiliária</a></li>
+              <li><a class="dropdown-item" href="../Pages/seguros.html">Seguros</a></li>
+              <li><a class="dropdown-item" href="../Pages/consultoria.html">Consultoria</a></li>
+              <li><a class="dropdown-item" href="#contato">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <a href="#" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2025 Fortune Solutions</p>
+    </div>
+  </footer>
+
+  <!-- ===== CHATBOT (mesmo bloco) ===== -->
+  <div class="chatbot-container" id="chatBotContainer">
+    <div class="chatbot-header" id="chatToggle">
+      <span><i class="bi bi-headset"></i></span>
+    </div>
+
+    <div class="chatbot-window" id="chatWindow">
+      <div id="chatHeader" class="chat-header">
+        <span>Atendimento Fortune</span>
+        <div class="chat-buttons">
+          <button id="minimizeChat" type="button">–</button>
+          <button id="closeChat" type="button">×</button>
+        </div>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Digite sua resposta..." />
+        <button id="sendBtn" type="button">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS da página (galerias + contato whatsapp). Pode ser separado. -->
+  <script src="../script/seguros.js"></script>
+
+  <!-- Se você quiser manter chatbot e modais no script geral, pode também incluir seu script.js revisado:
+  <script src="../script/script.js"></script>
+  -->
+</body>
+</html>

@@ -1,14 +1,6 @@
-/* =========================================
-   Fortune Solutions - script.js (revisado)
-   - Robustez (não quebra se não existir elemento)
-   - Acessibilidade (ESC fecha modais)
-   - Scroll lock consistente
-========================================= */
-
 (() => {
   "use strict";
 
-  /* ---------- Helpers ---------- */
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
@@ -33,100 +25,6 @@
     return () => window.removeEventListener("keydown", fn);
   }
 
-  /* ======================================================
-     1) Modal "Serviços" (Index) - se existir na página
-  ====================================================== */
-  function initModalServicos() {
-    const modal = $("#modalServicos");
-    const btnAbrir = $("#abrirModal");
-    const btnFechar = $("#fecharModal");
-
-    const categoriasContainer = $("#categoriasContainer");
-    const grupoImobiliaria = $("#grupoImobiliaria");
-    const grupoOutros = $("#grupoOutros");
-
-    const btnServicosImobiliarios = $("#btnServicosImobiliarios");
-    const btnOutrosServicos = $("#btnOutrosServicos");
-
-    const voltarParaCategorias1 = $("#voltarParaCategorias1");
-    const voltarParaCategorias2 = $("#voltarParaCategorias2");
-
-    if (!modal || !btnAbrir || !btnFechar) return;
-
-    let removeEsc = null;
-
-    function showCategorias() {
-      if (categoriasContainer) categoriasContainer.hidden = false;
-      if (grupoImobiliaria) grupoImobiliaria.hidden = true;
-      if (grupoOutros) grupoOutros.hidden = true;
-    }
-
-    function showGrupoImobiliaria() {
-      if (categoriasContainer) categoriasContainer.hidden = true;
-      if (grupoImobiliaria) grupoImobiliaria.hidden = false;
-      if (grupoOutros) grupoOutros.hidden = true;
-    }
-
-    function showGrupoOutros() {
-      if (categoriasContainer) categoriasContainer.hidden = true;
-      if (grupoImobiliaria) grupoImobiliaria.hidden = true;
-      if (grupoOutros) grupoOutros.hidden = false;
-    }
-
-    const open = () => {
-      modal.style.display = "flex";
-      showCategorias();
-      ScrollLock.lock();
-      removeEsc = onEscClose(close);
-    };
-
-    const close = () => {
-      modal.style.display = "none";
-      showCategorias();
-      ScrollLock.unlock();
-      if (removeEsc) removeEsc();
-      removeEsc = null;
-    };
-
-    btnAbrir.addEventListener("click", open);
-    btnFechar.addEventListener("click", close);
-
-    btnServicosImobiliarios?.addEventListener("click", showGrupoImobiliaria);
-    btnOutrosServicos?.addEventListener("click", showGrupoOutros);
-
-    voltarParaCategorias1?.addEventListener("click", showCategorias);
-    voltarParaCategorias2?.addEventListener("click", showCategorias);
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) close();
-    });
-  }
-
-  /* ======================================================
-     2) Vídeo de fundo (Index) - se existir
-  ====================================================== */
-  function initBgVideo() {
-    const video = $("#bg-video");
-    if (!video) return;
-
-    video.muted = true;
-    video.playsInline = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-
-    const play = () => video.play().catch(() => {});
-    play();
-
-    document.body.addEventListener(
-      "touchstart",
-      () => play(),
-      { once: true, passive: true }
-    );
-  }
-
-  /* ======================================================
-     3) Chatbot - se existir
-  ====================================================== */
   function initChatbot() {
     const chatToggle = $("#chatToggle");
     const chatWindow = $("#chatWindow");
@@ -189,10 +87,10 @@
       setInputEnabled(false);
 
       const opcoes = [
-        "Comprar imóvel",
-        "Vender imóvel",
-        "Alugar imóvel",
-        "Reforma",
+        "Quero comprar um imóvel",
+        "Quero vender um imóvel",
+        "Preciso de orientação documental",
+        "Quero consultoria imobiliária",
         "Outros assuntos"
       ];
 
@@ -302,9 +200,6 @@
     });
   }
 
-  /* ======================================================
-     4) Galeria (cards com data-galeria) - se existir
-  ====================================================== */
   function initGaleria() {
     const modalGaleria = $("#modalGaleria");
     const closeBtn = $(".close-modal");
@@ -325,19 +220,19 @@
 
     const galerias = {
       completa: [
-        { src: "../assets/imagens/casa/casa1.jpg", legenda: "Reforma completa - Cozinha" },
-        { src: "../assets/imagens/casa/casa5.jpg", legenda: "Reforma completa - Sala de estar" },
-        { src: "../assets/imagens/casa/casa4.jpg", legenda: "Reforma completa - Quarto" }
+        { src: "../assets/imagens/imoveis/imovel1.jpg", legenda: "Opções de imóveis para compra" },
+        { src: "../assets/imagens/imoveis/imovel2.jpg", legenda: "Imóveis com potencial de valorização" },
+        { src: "../assets/imagens/imoveis/imovel3.jpg", legenda: "Atendimento consultivo na escolha do imóvel" }
       ],
       pintura: [
-        { src: "../assets/imagens/casa/casa1.jpg", legenda: "Pintura - Antes e Depois" },
-        { src: "../assets/imagens/casa/casa5.jpg", legenda: "Pintura externa - Fachada" },
-        { src: "../assets/imagens/casa/casa4.jpg", legenda: "Pintura interna - Sala" }
+        { src: "../assets/imagens/imoveis/imovel2.jpg", legenda: "Imóveis em processo de venda" },
+        { src: "../assets/imagens/imoveis/imovel4.jpg", legenda: "Divulgação e apresentação comercial" },
+        { src: "../assets/imagens/imoveis/imovel5.jpg", legenda: "Negociação com acompanhamento" }
       ],
       personalizados: [
-        { src: "../assets/imagens/casa/casa1.jpg", legenda: "Projeto personalizado - Detalhamento" },
-        { src: "../assets/imagens/casa/casa5.jpg", legenda: "Ambiente planejado" },
-        { src: "../assets/imagens/casa/casa4.jpg", legenda: "Acabamento especial" }
+        { src: "../assets/imagens/imoveis/imovel3.jpg", legenda: "Atendimento personalizado" },
+        { src: "../assets/imagens/imoveis/imovel5.jpg", legenda: "Consultoria para compra ou venda" },
+        { src: "../assets/imagens/imoveis/imovel1.jpg", legenda: "Soluções conforme seu objetivo" }
       ]
     };
 
@@ -422,9 +317,6 @@
     });
   }
 
-  /* ======================================================
-     5) FAQ expansivo - se existir
-  ====================================================== */
   function initFAQ() {
     const items = $$(".menu-expansivo .item");
     if (!items.length) return;
@@ -470,9 +362,6 @@
     });
   }
 
-  /* ======================================================
-     6) Modais de Serviços (modal1..modal4)
-  ====================================================== */
   function initServiceModals() {
     const triggers = $$(".servico-item[data-modal]");
     const modals = $$(".modal");
@@ -563,12 +452,7 @@
     }
   }
 
-  /* ======================================================
-     Init geral
-  ====================================================== */
   document.addEventListener("DOMContentLoaded", () => {
-    initModalServicos();
-    initBgVideo();
     initChatbot();
     initGaleria();
     initFAQ();
