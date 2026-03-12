@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fortune Solutions: investimento imobiliário com orientação informativa, visão estratégica e apoio para tomada de decisão." />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Fortune Solutions - Investimento Imobiliário</title>
+
+  <link rel="stylesheet" href="../Style/investimentos.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="../Index.html" aria-label="Ir para a página inicial">
+        <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header" />
+        <h3>Fortune Solutions</h3>
+      </a>
+
+      <div class="header-actions">
+        <a class="header-cta" href="#contato">
+          <i class="bi bi-whatsapp"></i>
+          Fale conosco
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero hero-investimento" aria-label="Banner principal">
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <span class="hero-badge">Estratégia & Patrimônio</span>
+        <h1>Investimento imobiliário com mais visão e segurança</h1>
+        <p>Entenda melhor as possibilidades do mercado imobiliário, avalie seu perfil e tenha mais clareza antes de investir em um imóvel.</p>
+
+        <div class="hero-actions">
+          <a href="#servicos" class="btn btn-warning btn-lg hero-btn">Ver serviços</a>
+          <a href="#contato" class="btn btn-outline-light btn-lg hero-btn">Solicitar atendimento</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight">
+            <i class="bi bi-graph-up-arrow"></i>
+            <span>Visão estratégica</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-building-check"></i>
+            <span>Patrimônio & renda</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-shield-check"></i>
+            <span>Decisão mais consciente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="section-nav" aria-label="Navegação da página">
+    <div class="container nav-wrap">
+      <a href="#servicos" class="nav-pill"><i class="bi bi-grid-3x3-gap"></i> Serviços</a>
+      <a href="#portfolio" class="nav-pill"><i class="bi bi-images"></i> Estratégias</a>
+      <a href="#faq" class="nav-pill"><i class="bi bi-question-circle"></i> Dúvidas</a>
+      <a href="#contato" class="nav-pill"><i class="bi bi-telephone"></i> Contato</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <section id="servicos" class="container section">
+      <header class="section-header">
+        <h2>Principais frentes do investimento</h2>
+        <p>Conheça alguns pontos importantes para quem deseja investir em imóveis.</p>
+      </header>
+
+      <div class="cards-servicos" id="portfolio">
+        <button class="card card-portfolio" type="button" data-galeria="renda" aria-label="Abrir galeria de imóveis para renda">
+          <img src="../assets/imagens/investimento/investimento1.jpg" alt="Imóveis para geração de renda" loading="lazy">
+          <div class="card-body">
+            <h3>Renda com Imóveis</h3>
+            <p>Entenda possibilidades ligadas à geração de renda com patrimônio imobiliário.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="valorizacao" aria-label="Abrir galeria de valorização patrimonial">
+          <img src="../assets/imagens/investimento/investimento2.jpg" alt="Valorização patrimonial" loading="lazy">
+          <div class="card-body">
+            <h3>Valorização Patrimonial</h3>
+            <p>Veja como o imóvel pode ser analisado como ativo de longo prazo.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="estrategia" aria-label="Abrir galeria de estratégia de investimento">
+          <img src="../assets/imagens/investimento/investimento3.jpg" alt="Estratégia de investimento imobiliário" loading="lazy">
+          <div class="card-body">
+            <h3>Estratégia de Investimento</h3>
+            <p>Mais clareza sobre perfil, objetivo e momento para investir.</p>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <div id="modalGaleria" class="modal-galeria" role="dialog" aria-modal="true" aria-label="Galeria de imagens">
+      <div class="modal-fullscreen">
+        <button class="close-modal" type="button" aria-label="Fechar galeria">&times;</button>
+
+        <div class="imagem-principal-area">
+          <div class="legenda-overlay">
+            <span id="legendaFoto"></span>
+          </div>
+
+          <img id="imagemGrande" src="" alt="Imagem selecionada" />
+
+          <div class="orcamento-wrapper">
+            <a href="#contato" class="btn-orcamento">Solicitar atendimento</a>
+          </div>
+
+          <button id="prevBtn" class="nav-btn" type="button" aria-label="Imagem anterior">&#10094;</button>
+          <button id="nextBtn" class="nav-btn" type="button" aria-label="Próxima imagem">&#10095;</button>
+        </div>
+
+        <div class="miniaturas-scroll" id="galeriaMiniaturas" aria-label="Miniaturas da galeria"></div>
+      </div>
+    </div>
+
+    <section class="container section">
+      <header class="section-header">
+        <h2>Como podemos ajudar</h2>
+        <p>Detalhes sobre investimento imobiliário. Clique para abrir.</p>
+      </header>
+
+      <div class="servicos-lista">
+        <button class="servico-item" type="button" data-modal="modal1" aria-label="Abrir detalhes de análise de perfil do investidor">
+          <h3>Análise de Perfil do Investidor</h3>
+          <p><strong>Descrição:</strong> Entendimento do momento, objetivo e perfil antes de investir.</p>
+          <p><strong>Condições:</strong> Atendimento consultivo e informativo.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal2" aria-label="Abrir detalhes de investimento para renda">
+          <h3>Investimento para Renda</h3>
+          <p><strong>Descrição:</strong> Visão inicial sobre imóveis voltados à geração de renda.</p>
+          <p><strong>Condições:</strong> Direcionamento conforme objetivo do cliente.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal3" aria-label="Abrir detalhes de valorização patrimonial">
+          <h3>Valorização Patrimonial</h3>
+          <p><strong>Descrição:</strong> Entendimento de imóveis como ativo de médio e longo prazo.</p>
+          <p><strong>Condições:</strong> Atendimento personalizado.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal4" aria-label="Abrir detalhes de consultoria de decisão">
+          <h3>Consultoria de Decisão</h3>
+          <p><strong>Descrição:</strong> Apoio para avaliar melhor o momento e a direção do investimento.</p>
+          <p><strong>Condições:</strong> Suporte estratégico inicial.</p>
+        </button>
+      </div>
+
+      <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Análise de Perfil do Investidor</h2>
+            <p>Antes de investir, é importante entender melhor seu momento, objetivo e expectativa.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#item-1">Visão geral</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-1">Objetivos</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-2">Prazo</a>
+                <a class="nav-link mt-2" href="#item-2">Perfil</a>
+                <a class="nav-link mt-2" href="#item-3">Direcionamento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="item-1"><h4>Visão geral</h4><p>Investir em imóvel exige uma leitura mais clara do seu objetivo e da sua estratégia.</p></div>
+              <div id="item-1-1"><h5>Objetivos</h5><p>Entendimento se a intenção é renda, valorização, proteção patrimonial ou diversificação.</p></div>
+              <div id="item-1-2"><h5>Prazo</h5><p>Definição se o investimento busca retorno mais imediato ou construção de patrimônio no longo prazo.</p></div>
+              <div id="item-2"><h4>Perfil</h4><p>Compreensão do seu momento e da forma como você enxerga segurança, risco e oportunidade.</p></div>
+              <div id="item-3"><h4>Direcionamento</h4><p>Mais clareza para decidir com menos impulso e mais consciência estratégica.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Investimento para Renda</h2>
+            <p>Uma das visões do investimento imobiliário está ligada à possibilidade de geração de renda.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#renda-1">Objetivo</a>
+                <a class="nav-link" href="#renda-2">Perfil do imóvel</a>
+                <a class="nav-link" href="#renda-3">Visão estratégica</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="renda-1"><h4>Objetivo</h4><p>Entendimento da compra de imóvel como uma possível fonte de renda vinculada ao patrimônio.</p></div>
+              <div id="renda-2"><h4>Perfil do imóvel</h4><p>Análise inicial sobre características que podem fazer mais sentido para essa estratégia.</p></div>
+              <div id="renda-3"><h4>Visão estratégica</h4><p>Mais clareza para avaliar se esse caminho está alinhado ao seu perfil e expectativa.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Valorização Patrimonial</h2>
+            <p>O imóvel também pode ser visto como instrumento de construção de patrimônio no tempo.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#valor-1">Patrimônio</a>
+                <a class="nav-link ms-3 my-1" href="#valor-1-1">Longo prazo</a>
+                <a class="nav-link ms-3 my-1" href="#valor-1-2">Objetivo</a>
+                <a class="nav-link mt-2" href="#valor-2">Análise</a>
+                <a class="nav-link mt-2" href="#valor-3">Clareza</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="valor-1"><h4>Patrimônio</h4><p>O investimento imobiliário pode estar ligado à construção e preservação de patrimônio.</p></div>
+              <div id="valor-1-1"><h5>Longo prazo</h5><p>Uma visão patrimonial costuma exigir leitura de tempo, estratégia e consistência.</p></div>
+              <div id="valor-1-2"><h5>Objetivo</h5><p>Definir o motivo do investimento ajuda a evitar decisões desalinhadas com seu plano.</p></div>
+              <div id="valor-2"><h4>Análise</h4><p>Mais clareza sobre a função do imóvel dentro da sua estratégia financeira e patrimonial.</p></div>
+              <div id="valor-3"><h4>Clareza</h4><p>Atendimento para orientar o cliente antes de seguir com uma escolha importante.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Consultoria de Decisão</h2>
+            <p>Mais clareza para quem quer investir, mas ainda está avaliando como e quando dar o próximo passo.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#cons-1">Momento</a>
+                <a class="nav-link" href="#cons-2">Dúvidas</a>
+                <a class="nav-link" href="#cons-3">Direcionamento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="cons-1"><h4>Momento</h4><p>Entendimento do cenário atual do cliente antes de iniciar um investimento imobiliário.</p></div>
+              <div id="cons-2"><h4>Dúvidas</h4><p>Esclarecimento inicial sobre objetivos, visão patrimonial e estratégia mais adequada.</p></div>
+              <div id="cons-3"><h4>Direcionamento</h4><p>Atendimento consultivo para ajudar o cliente a decidir com mais segurança e visão.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="container section">
+      <header class="section-header">
+        <h2>Dúvidas frequentes</h2>
+        <p>Respostas rápidas sobre investimento imobiliário.</p>
+      </header>
+
+      <section class="menu-expansivo" aria-label="Perguntas frequentes">
+        <div class="item">
+          <button class="titulo" type="button">Investimento imobiliário é só para quem tem muito capital?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/investimento/investimento1.jpg" alt="Investimento imobiliário" loading="lazy">
+            <p>Não necessariamente. O mais importante é entender o objetivo, o momento do cliente e a estratégia adequada antes de investir.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Todo imóvel serve como investimento?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/investimento/investimento2.jpg" alt="Valorização patrimonial" loading="lazy">
+            <p>Nem sempre. A análise depende do objetivo do cliente, do perfil do imóvel e da visão estratégica adotada.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Essa página ajuda quem quer investir para renda?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/investimento/investimento3.jpg" alt="Renda com imóveis" loading="lazy">
+            <p>Sim. A proposta é apresentar caminhos iniciais e esclarecer dúvidas de quem deseja entender melhor esse tipo de investimento.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Essa página permite fazer o investimento diretamente?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/investimento/investimento4.jpg" alt="Consultoria para investimento imobiliário" loading="lazy">
+            <p>Não. A página tem caráter informativo e serve para apresentar o serviço, esclarecer dúvidas e facilitar o contato para atendimento personalizado.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="contato" class="container section">
+      <header class="section-header">
+        <h2>Contato</h2>
+        <p>Fale com a Fortune Solutions e receba atendimento para investimento imobiliário.</p>
+      </header>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <i class="bi bi-whatsapp"></i>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>Atendimento rápido para esclarecer dúvidas e iniciar seu atendimento.</p>
+          </div>
+        </div>
+
+        <a class="btn btn-warning btn-lg w-100" href="#" onclick="return false;">
+          Chamar no WhatsApp
+        </a>
+
+        <small class="contact-note">*Você pode ligar esse botão ao seu número/URL do WhatsApp.</small>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-row">
+        <div class="footer-left">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Outros Serviços:
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Pages/Index.html">Início</a></li>
+              <li><a class="dropdown-item" href="../Pages/reforma.html">Reformas</a></li>
+              <li><a class="dropdown-item" href="../Pages/compraevenda.html">Compra e Venda</a></li>
+              <li><a class="dropdown-item" href="../Pages/aluguel.html">Aluguel</a></li>
+              <li><a class="dropdown-item" href="../Pages/administrativo.html">Administrativo</a></li>
+              <li><a class="dropdown-item" href="../Pages/planejamentocompra.html">Planejamento de Compra</a></li>
+              <li><a class="dropdown-item" href="#contato">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <a href="#" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2025 Fortune Solutions</p>
+    </div>
+  </footer>
+
+  <div class="chatbot-container" id="chatBotContainer">
+    <div class="chatbot-header" id="chatToggle">
+      <span><i class="bi bi-headset"></i></span>
+    </div>
+
+    <div class="chatbot-window" id="chatWindow">
+      <div id="chatHeader" class="chat-header">
+        <span>Atendimento Fortune</span>
+        <div class="chat-buttons">
+          <button id="minimizeChat" type="button">–</button>
+          <button id="closeChat" type="button">×</button>
+        </div>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Digite sua resposta..." />
+        <button id="sendBtn" type="button">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script/investimentoimobiliario.js"></script>
+</body>
+</html>

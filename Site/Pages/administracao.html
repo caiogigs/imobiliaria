@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fortune Solutions: serviços administrativos para gestão imobiliária, locação, contratos e suporte ao proprietário." />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Fortune Solutions - Administrativo</title>
+
+  <link rel="stylesheet" href="../Style/administracao.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="../Index.html" aria-label="Ir para a página inicial">
+        <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header" />
+        <h3>Fortune Solutions</h3>
+      </a>
+
+      <div class="header-actions">
+        <a class="header-cta" href="#contato">
+          <i class="bi bi-whatsapp"></i>
+          Fale conosco
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero hero-administrativo" aria-label="Banner principal">
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <span class="hero-badge">Gestão & Suporte</span>
+        <h1>Administração imobiliária com mais organização e tranquilidade</h1>
+        <p>Serviços administrativos pensados para facilitar a rotina de proprietários e clientes, com acompanhamento, clareza e suporte nas etapas do processo.</p>
+
+        <div class="hero-actions">
+          <a href="#servicos" class="btn btn-warning btn-lg hero-btn">Ver serviços</a>
+          <a href="#contato" class="btn btn-outline-light btn-lg hero-btn">Solicitar atendimento</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight">
+            <i class="bi bi-folder-check"></i>
+            <span>Organização documental</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-clipboard-data"></i>
+            <span>Gestão mais clara</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-people"></i>
+            <span>Suporte ao cliente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="section-nav" aria-label="Navegação da página">
+    <div class="container nav-wrap">
+      <a href="#servicos" class="nav-pill"><i class="bi bi-grid-3x3-gap"></i> Serviços</a>
+      <a href="#portfolio" class="nav-pill"><i class="bi bi-images"></i> Portfólio</a>
+      <a href="#faq" class="nav-pill"><i class="bi bi-question-circle"></i> Dúvidas</a>
+      <a href="#contato" class="nav-pill"><i class="bi bi-telephone"></i> Contato</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <section id="servicos" class="container section">
+      <header class="section-header">
+        <h2>Principais soluções</h2>
+        <p>Conheça algumas frentes de atendimento administrativo imobiliário.</p>
+      </header>
+
+      <div class="cards-servicos" id="portfolio">
+        <button class="card card-portfolio" type="button" data-galeria="completa" aria-label="Abrir galeria de gestão administrativa">
+          <img src="../assets/imagens/administrativo/administrativo1.jpg" alt="Gestão administrativa imobiliária" loading="lazy">
+          <div class="card-body">
+            <h3>Gestão Administrativa</h3>
+            <p>Organização e acompanhamento das rotinas ligadas ao imóvel.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="contratos" aria-label="Abrir galeria de contratos e documentos">
+          <img src="../assets/imagens/administrativo/administrativo2.jpg" alt="Contratos e documentos" loading="lazy">
+          <div class="card-body">
+            <h3>Contratos & Documentos</h3>
+            <p>Mais clareza na organização das etapas administrativas.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="atendimento" aria-label="Abrir galeria de atendimento ao cliente">
+          <img src="../assets/imagens/administrativo/administrativo3.jpg" alt="Atendimento administrativo" loading="lazy">
+          <div class="card-body">
+            <h3>Atendimento & Suporte</h3>
+            <p>Orientação para dúvidas de locação, gestão e rotina do imóvel.</p>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <div id="modalGaleria" class="modal-galeria" role="dialog" aria-modal="true" aria-label="Galeria de imagens">
+      <div class="modal-fullscreen">
+        <button class="close-modal" type="button" aria-label="Fechar galeria">&times;</button>
+
+        <div class="imagem-principal-area">
+          <div class="legenda-overlay">
+            <span id="legendaFoto"></span>
+          </div>
+
+          <img id="imagemGrande" src="" alt="Imagem selecionada" />
+
+          <div class="orcamento-wrapper">
+            <a href="#contato" class="btn-orcamento">Solicitar atendimento</a>
+          </div>
+
+          <button id="prevBtn" class="nav-btn" type="button" aria-label="Imagem anterior">&#10094;</button>
+          <button id="nextBtn" class="nav-btn" type="button" aria-label="Próxima imagem">&#10095;</button>
+        </div>
+
+        <div class="miniaturas-scroll" id="galeriaMiniaturas" aria-label="Miniaturas da galeria"></div>
+      </div>
+    </div>
+
+    <section class="container section">
+      <header class="section-header">
+        <h2>Como podemos ajudar</h2>
+        <p>Detalhes sobre os principais serviços administrativos. Clique para abrir.</p>
+      </header>
+
+      <div class="servicos-lista">
+        <button class="servico-item" type="button" data-modal="modal1" aria-label="Abrir detalhes de administração de locação">
+          <h3>Administração de Locação</h3>
+          <p><strong>Descrição:</strong> Acompanhamento administrativo relacionado à locação do imóvel.</p>
+          <p><strong>Condições:</strong> Suporte organizado ao longo do processo.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal2" aria-label="Abrir detalhes de gestão contratual">
+          <h3>Gestão Contratual</h3>
+          <p><strong>Descrição:</strong> Apoio na organização das etapas relacionadas a contratos.</p>
+          <p><strong>Condições:</strong> Atendimento conforme a necessidade do cliente.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal3" aria-label="Abrir detalhes de suporte ao proprietário">
+          <h3>Suporte ao Proprietário</h3>
+          <p><strong>Descrição:</strong> Orientação administrativa para proprietários de imóveis.</p>
+          <p><strong>Condições:</strong> Atendimento informativo e personalizado.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal4" aria-label="Abrir detalhes de organização documental">
+          <h3>Organização Documental</h3>
+          <p><strong>Descrição:</strong> Auxílio com documentos e informações ligadas à gestão do imóvel.</p>
+          <p><strong>Condições:</strong> Direcionamento claro e objetivo.</p>
+        </button>
+      </div>
+
+      <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Administração de Locação</h2>
+            <p>Mais organização para o acompanhamento administrativo da locação.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#item-1">Visão geral</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-1">Acompanhamento</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-2">Rotina</a>
+                <a class="nav-link mt-2" href="#item-2">Etapas</a>
+                <a class="nav-link mt-2" href="#item-3">Suporte</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="item-1"><h4>Visão geral</h4><p>Atendimento voltado para dar mais clareza aos processos administrativos ligados à locação do imóvel.</p></div>
+              <div id="item-1-1"><h5>Acompanhamento</h5><p>Organização das informações e apoio no entendimento das etapas administrativas.</p></div>
+              <div id="item-1-2"><h5>Rotina</h5><p>Mais praticidade para lidar com a rotina relacionada ao imóvel e à locação.</p></div>
+              <div id="item-2"><h4>Etapas</h4><p>Levantamento das necessidades → organização das informações → atendimento e acompanhamento.</p></div>
+              <div id="item-3"><h4>Suporte</h4><p>Direcionamento para reduzir dúvidas e facilitar o relacionamento durante o processo.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Gestão Contratual</h2>
+            <p>Mais clareza e organização nas etapas ligadas à documentação contratual.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#contr-1">Contratos</a>
+                <a class="nav-link" href="#contr-2">Informações</a>
+                <a class="nav-link" href="#contr-3">Orientação</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="contr-1"><h4>Contratos</h4><p>Atendimento para auxiliar na compreensão e organização das etapas contratuais.</p></div>
+              <div id="contr-2"><h4>Informações</h4><p>Centralização e conferência das informações principais do processo.</p></div>
+              <div id="contr-3"><h4>Orientação</h4><p>Suporte para tornar o andamento administrativo mais claro para o cliente.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Suporte ao Proprietário</h2>
+            <p>Atendimento administrativo para auxiliar o proprietário na gestão do imóvel.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#prop-1">Visão geral</a>
+                <a class="nav-link ms-3 my-1" href="#prop-1-1">Demandas</a>
+                <a class="nav-link ms-3 my-1" href="#prop-1-2">Acompanhamento</a>
+                <a class="nav-link mt-2" href="#prop-2">Organização</a>
+                <a class="nav-link mt-2" href="#prop-3">Atendimento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="prop-1"><h4>Visão geral</h4><p>Suporte para facilitar o entendimento e a gestão administrativa do imóvel.</p></div>
+              <div id="prop-1-1"><h5>Demandas</h5><p>Auxílio no acompanhamento de necessidades ligadas à administração do imóvel.</p></div>
+              <div id="prop-1-2"><h5>Acompanhamento</h5><p>Mais clareza no fluxo de informações entre proprietário e atendimento.</p></div>
+              <div id="prop-2"><h4>Organização</h4><p>Estruturação de informações para reduzir ruídos e tornar o processo mais prático.</p></div>
+              <div id="prop-3"><h4>Atendimento</h4><p>Orientação personalizada conforme a realidade e a necessidade do proprietário.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Organização Documental</h2>
+            <p>Auxílio para estruturar documentos e informações da rotina administrativa.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#doc-1">Documentos</a>
+                <a class="nav-link" href="#doc-2">Informações</a>
+                <a class="nav-link" href="#doc-3">Direcionamento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="doc-1"><h4>Documentos</h4><p>Organização das informações e documentos necessários para dar mais clareza ao processo.</p></div>
+              <div id="doc-2"><h4>Informações</h4><p>Separação e entendimento dos dados principais relacionados ao imóvel e à administração.</p></div>
+              <div id="doc-3"><h4>Direcionamento</h4><p>Atendimento para orientar sobre próximos passos e necessidade de cada etapa.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="container section">
+      <header class="section-header">
+        <h2>Dúvidas frequentes</h2>
+        <p>Respostas rápidas sobre os serviços administrativos.</p>
+      </header>
+
+      <section class="menu-expansivo" aria-label="Perguntas frequentes">
+        <div class="item">
+          <button class="titulo" type="button">O que entra no serviço administrativo?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/administrativo/administrativo1.jpg" alt="Serviço administrativo imobiliário" loading="lazy">
+            <p>O foco é oferecer suporte organizacional e informativo em rotinas ligadas à gestão do imóvel, contratos e acompanhamento administrativo.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Esse serviço é voltado para locação?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/administrativo/administrativo2.jpg" alt="Gestão de contratos e locação" loading="lazy">
+            <p>Sim. O atendimento pode apoiar etapas administrativas relacionadas à locação e à rotina do imóvel.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Proprietários também podem utilizar esse atendimento?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/administrativo/administrativo3.jpg" alt="Suporte ao proprietário" loading="lazy">
+            <p>Sim. O atendimento foi pensado também para proprietários que precisam de mais clareza e organização na gestão administrativa do imóvel.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Essa página resolve tudo online?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/administrativo/administrativo4.jpg" alt="Atendimento administrativo informativo" loading="lazy">
+            <p>Não. A página tem caráter informativo e serve para apresentar os serviços, esclarecer dúvidas e facilitar o contato para atendimento personalizado.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="contato" class="container section">
+      <header class="section-header">
+        <h2>Contato</h2>
+        <p>Fale com a Fortune Solutions e receba atendimento para o setor administrativo.</p>
+      </header>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <i class="bi bi-whatsapp"></i>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>Atendimento rápido para esclarecer dúvidas e iniciar seu atendimento.</p>
+          </div>
+        </div>
+
+        <a class="btn btn-warning btn-lg w-100" href="#" onclick="return false;">
+          Chamar no WhatsApp
+        </a>
+
+        <small class="contact-note">*Você pode ligar esse botão ao seu número/URL do WhatsApp.</small>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-row">
+        <div class="footer-left">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Outros Serviços:
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Pages/Index.html">Início</a></li>
+              <li><a class="dropdown-item" href="../Pages/reforma.html">Reformas</a></li>
+              <li><a class="dropdown-item" href="../Pages/compraevenda.html">Compra e Venda</a></li>
+              <li><a class="dropdown-item" href="../Pages/aluguel.html">Aluguel</a></li>
+              <li><a class="dropdown-item" href="#contato">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <a href="#" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2025 Fortune Solutions</p>
+    </div>
+  </footer>
+
+  <div class="chatbot-container" id="chatBotContainer">
+    <div class="chatbot-header" id="chatToggle">
+      <span><i class="bi bi-headset"></i></span>
+    </div>
+
+    <div class="chatbot-window" id="chatWindow">
+      <div id="chatHeader" class="chat-header">
+        <span>Atendimento Fortune</span>
+        <div class="chat-buttons">
+          <button id="minimizeChat" type="button">–</button>
+          <button id="closeChat" type="button">×</button>
+        </div>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Digite sua resposta..." />
+        <button id="sendBtn" type="button">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script/administracao.js"></script>
+</body>
+</html>

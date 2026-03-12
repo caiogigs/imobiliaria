@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fortune Solutions: planejamento de compra de imóvel com orientação inicial, organização financeira e apoio nas etapas da decisão." />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Fortune Solutions - Planejamento de Compra</title>
+
+  <link rel="stylesheet" href="../Style/planejamento.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="../Index.html" aria-label="Ir para a página inicial">
+        <img src="../assets/imagens/lg.png" alt="Logo da Fortune Solutions" class="logo-header" />
+        <h3>Fortune Solutions</h3>
+      </a>
+
+      <div class="header-actions">
+        <a class="header-cta" href="#contato">
+          <i class="bi bi-whatsapp"></i>
+          Fale conosco
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero hero-planejamento" aria-label="Banner principal">
+    <div class="hero-overlay">
+      <div class="container hero-content">
+        <span class="hero-badge">Organização & Estratégia</span>
+        <h1>Planejamento de compra com mais clareza e segurança</h1>
+        <p>Entenda melhor seu momento, organize prioridades e tenha uma visão mais clara das etapas antes de comprar um imóvel.</p>
+
+        <div class="hero-actions">
+          <a href="#servicos" class="btn btn-warning btn-lg hero-btn">Ver serviços</a>
+          <a href="#contato" class="btn btn-outline-light btn-lg hero-btn">Solicitar atendimento</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight">
+            <i class="bi bi-wallet2"></i>
+            <span>Organização financeira</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-house-heart"></i>
+            <span>Definição de objetivo</span>
+          </div>
+          <div class="highlight">
+            <i class="bi bi-check2-square"></i>
+            <span>Mais clareza na decisão</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="section-nav" aria-label="Navegação da página">
+    <div class="container nav-wrap">
+      <a href="#servicos" class="nav-pill"><i class="bi bi-grid-3x3-gap"></i> Serviços</a>
+      <a href="#portfolio" class="nav-pill"><i class="bi bi-images"></i> Etapas</a>
+      <a href="#faq" class="nav-pill"><i class="bi bi-question-circle"></i> Dúvidas</a>
+      <a href="#contato" class="nav-pill"><i class="bi bi-telephone"></i> Contato</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <section id="servicos" class="container section">
+      <header class="section-header">
+        <h2>Principais frentes do planejamento</h2>
+        <p>Conheça os pontos mais importantes antes de avançar para a compra.</p>
+      </header>
+
+      <div class="cards-servicos" id="portfolio">
+        <button class="card card-portfolio" type="button" data-galeria="financeiro" aria-label="Abrir galeria de organização financeira">
+          <img src="../assets/imagens/planejamento/planejamento1.jpg" alt="Organização financeira para compra" loading="lazy">
+          <div class="card-body">
+            <h3>Organização Financeira</h3>
+            <p>Entenda sua realidade antes de escolher o imóvel ideal.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="objetivos" aria-label="Abrir galeria de definição de objetivos">
+          <img src="../assets/imagens/planejamento/planejamento2.jpg" alt="Definição de objetivos de compra" loading="lazy">
+          <div class="card-body">
+            <h3>Definição de Objetivos</h3>
+            <p>Saiba o que faz sentido para seu momento e seu plano.</p>
+          </div>
+        </button>
+
+        <button class="card card-portfolio" type="button" data-galeria="etapas" aria-label="Abrir galeria de etapas da compra">
+          <img src="../assets/imagens/planejamento/planejamento3.jpg" alt="Etapas do planejamento de compra" loading="lazy">
+          <div class="card-body">
+            <h3>Etapas da Compra</h3>
+            <p>Tenha uma visão clara do caminho antes da decisão final.</p>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <div id="modalGaleria" class="modal-galeria" role="dialog" aria-modal="true" aria-label="Galeria de imagens">
+      <div class="modal-fullscreen">
+        <button class="close-modal" type="button" aria-label="Fechar galeria">&times;</button>
+
+        <div class="imagem-principal-area">
+          <div class="legenda-overlay">
+            <span id="legendaFoto"></span>
+          </div>
+
+          <img id="imagemGrande" src="" alt="Imagem selecionada" />
+
+          <div class="orcamento-wrapper">
+            <a href="#contato" class="btn-orcamento">Solicitar atendimento</a>
+          </div>
+
+          <button id="prevBtn" class="nav-btn" type="button" aria-label="Imagem anterior">&#10094;</button>
+          <button id="nextBtn" class="nav-btn" type="button" aria-label="Próxima imagem">&#10095;</button>
+        </div>
+
+        <div class="miniaturas-scroll" id="galeriaMiniaturas" aria-label="Miniaturas da galeria"></div>
+      </div>
+    </div>
+
+    <section class="container section">
+      <header class="section-header">
+        <h2>Como podemos ajudar</h2>
+        <p>Detalhes sobre o planejamento de compra. Clique para abrir.</p>
+      </header>
+
+      <div class="servicos-lista">
+        <button class="servico-item" type="button" data-modal="modal1" aria-label="Abrir detalhes de organização financeira">
+          <h3>Organização Financeira Inicial</h3>
+          <p><strong>Descrição:</strong> Apoio para entender melhor a realidade financeira antes da compra.</p>
+          <p><strong>Condições:</strong> Atendimento informativo e consultivo.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal2" aria-label="Abrir detalhes de definição de perfil do imóvel">
+          <h3>Definição de Perfil do Imóvel</h3>
+          <p><strong>Descrição:</strong> Clareza sobre o tipo de imóvel mais adequado ao seu objetivo.</p>
+          <p><strong>Condições:</strong> Direcionamento conforme necessidade e momento.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal3" aria-label="Abrir detalhes de etapas da compra">
+          <h3>Entendimento das Etapas</h3>
+          <p><strong>Descrição:</strong> Visão geral do processo para comprar com mais segurança.</p>
+          <p><strong>Condições:</strong> Suporte inicial para esclarecimento.</p>
+        </button>
+
+        <button class="servico-item" type="button" data-modal="modal4" aria-label="Abrir detalhes de consultoria de decisão">
+          <h3>Consultoria de Decisão</h3>
+          <p><strong>Descrição:</strong> Atendimento para ajudar o cliente a tomar uma decisão mais segura.</p>
+          <p><strong>Condições:</strong> Atendimento personalizado.</p>
+        </button>
+      </div>
+
+      <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Organização Financeira Inicial</h2>
+            <p>Entender seu momento financeiro é um dos primeiros passos antes de buscar um imóvel.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#item-1">Visão geral</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-1">Capacidade atual</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-2">Planejamento</a>
+                <a class="nav-link mt-2" href="#item-2">Prioridades</a>
+                <a class="nav-link mt-2" href="#item-3">Direcionamento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="item-1"><h4>Visão geral</h4><p>Antes de escolher o imóvel, é importante compreender melhor sua realidade e seu planejamento financeiro.</p></div>
+              <div id="item-1-1"><h5>Capacidade atual</h5><p>Entendimento da faixa de valor que faz sentido para o seu momento.</p></div>
+              <div id="item-1-2"><h5>Planejamento</h5><p>Mais clareza sobre como se organizar antes de avançar nas próximas etapas.</p></div>
+              <div id="item-2"><h4>Prioridades</h4><p>Definição do que é mais importante: localização, tamanho, conforto, investimento ou prazo.</p></div>
+              <div id="item-3"><h4>Direcionamento</h4><p>Atendimento para ajudar o cliente a seguir com mais consciência e segurança.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Definição de Perfil do Imóvel</h2>
+            <p>Nem todo imóvel faz sentido para toda pessoa. O ideal depende do seu momento e objetivo.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#perfil-1">Objetivo</a>
+                <a class="nav-link" href="#perfil-2">Necessidades</a>
+                <a class="nav-link" href="#perfil-3">Escolha</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="perfil-1"><h4>Objetivo</h4><p>Entendimento se a compra será para moradia, investimento, mudança de fase ou outro propósito.</p></div>
+              <div id="perfil-2"><h4>Necessidades</h4><p>Definição de pontos como espaço, localização, estrutura e praticidade.</p></div>
+              <div id="perfil-3"><h4>Escolha</h4><p>Mais clareza para evitar decisões precipitadas e buscar algo mais alinhado ao seu perfil.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Entendimento das Etapas</h2>
+            <p>Conhecer as etapas da compra ajuda a tomar decisões com mais segurança.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav id="navbar-example3" class="nav flex-column">
+                <a class="nav-link" href="#etapas-1">Início</a>
+                <a class="nav-link ms-3 my-1" href="#etapas-1-1">Planejamento</a>
+                <a class="nav-link ms-3 my-1" href="#etapas-1-2">Busca</a>
+                <a class="nav-link mt-2" href="#etapas-2">Avaliação</a>
+                <a class="nav-link mt-2" href="#etapas-3">Decisão</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="etapas-1"><h4>Início</h4><p>Tudo começa com a compreensão do objetivo e do momento do comprador.</p></div>
+              <div id="etapas-1-1"><h5>Planejamento</h5><p>Organização de informações, prioridades e limitações antes da busca efetiva.</p></div>
+              <div id="etapas-1-2"><h5>Busca</h5><p>Seleção de imóveis mais compatíveis com o perfil e o planejamento definido.</p></div>
+              <div id="etapas-2"><h4>Avaliação</h4><p>Análise mais cuidadosa das opções disponíveis antes de seguir adiante.</p></div>
+              <div id="etapas-3"><h4>Decisão</h4><p>Tomada de decisão com mais consciência, reduzindo dúvidas e insegurança.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+
+      <div id="modal4" class="modal" role="dialog" aria-modal="true" aria-label="Detalhes do serviço">
+        <div class="modal-content modal-large">
+          <button class="close" type="button" aria-label="Fechar modal">&times;</button>
+
+          <div class="modal-header-area">
+            <h2>Consultoria de Decisão</h2>
+            <p>Mais clareza para quem ainda está em dúvida sobre quando, como e o que comprar.</p>
+          </div>
+
+          <div class="modal-body-grid">
+            <div class="menu-lateral">
+              <nav class="nav flex-column">
+                <a class="nav-link" href="#cons-1">Momento</a>
+                <a class="nav-link" href="#cons-2">Dúvidas</a>
+                <a class="nav-link" href="#cons-3">Direcionamento</a>
+              </nav>
+            </div>
+
+            <div class="conteudo-scroll" tabindex="0">
+              <div id="cons-1"><h4>Momento</h4><p>Entendimento do seu cenário atual antes de avançar com uma compra importante.</p></div>
+              <div id="cons-2"><h4>Dúvidas</h4><p>Esclarecimento inicial sobre prioridades, perfil do imóvel e etapa mais adequada.</p></div>
+              <div id="cons-3"><h4>Direcionamento</h4><p>Atendimento consultivo para tomar decisões com mais consciência e menos impulso.</p></div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn-orcamento">Solicitar Atendimento</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="container section">
+      <header class="section-header">
+        <h2>Dúvidas frequentes</h2>
+        <p>Respostas rápidas sobre planejamento de compra.</p>
+      </header>
+
+      <section class="menu-expansivo" aria-label="Perguntas frequentes">
+        <div class="item">
+          <button class="titulo" type="button">Planejamento de compra é só para quem vai financiar?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/planejamento/planejamento1.jpg" alt="Planejamento financeiro para compra" loading="lazy">
+            <p>Não. O planejamento é útil para qualquer pessoa que deseja comprar um imóvel com mais clareza, independentemente da forma de pagamento.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Essa página ajuda a escolher o imóvel ideal?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/planejamento/planejamento2.jpg" alt="Definição de perfil do imóvel" loading="lazy">
+            <p>Sim. O foco é ajudar o cliente a entender melhor o próprio perfil, objetivo e prioridades antes da busca efetiva.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Posso usar esse atendimento mesmo sem decidir comprar agora?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/planejamento/planejamento3.jpg" alt="Etapas do planejamento de compra" loading="lazy">
+            <p>Sim. A proposta é justamente orientar o cliente antes da decisão final, para que ele compre com mais segurança no momento certo.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <button class="titulo" type="button">Essa página já permite fechar a compra?</button>
+          <div class="conteudo">
+            <img src="../assets/imagens/planejamento/planejamento4.jpg" alt="Atendimento consultivo para compra" loading="lazy">
+            <p>Não. A página tem caráter informativo e serve para esclarecer dúvidas, apresentar o serviço e facilitar o contato para atendimento personalizado.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="contato" class="container section">
+      <header class="section-header">
+        <h2>Contato</h2>
+        <p>Fale com a Fortune Solutions e receba atendimento para planejamento de compra.</p>
+      </header>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <i class="bi bi-whatsapp"></i>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>Atendimento rápido para esclarecer dúvidas e iniciar seu atendimento.</p>
+          </div>
+        </div>
+
+        <a class="btn btn-warning btn-lg w-100" href="#" onclick="return false;">
+          Chamar no WhatsApp
+        </a>
+
+        <small class="contact-note">*Você pode ligar esse botão ao seu número/URL do WhatsApp.</small>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-row">
+        <div class="footer-left">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Outros Serviços:
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Pages/Index.html">Início</a></li>
+              <li><a class="dropdown-item" href="../Pages/reforma.html">Reformas</a></li>
+              <li><a class="dropdown-item" href="../Pages/compraevenda.html">Compra e Venda</a></li>
+              <li><a class="dropdown-item" href="../Pages/aluguel.html">Aluguel</a></li>
+              <li><a class="dropdown-item" href="../Pages/administrativo.html">Administrativo</a></li>
+              <li><a class="dropdown-item" href="#contato">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <a href="#" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2025 Fortune Solutions</p>
+    </div>
+  </footer>
+
+  <div class="chatbot-container" id="chatBotContainer">
+    <div class="chatbot-header" id="chatToggle">
+      <span><i class="bi bi-headset"></i></span>
+    </div>
+
+    <div class="chatbot-window" id="chatWindow">
+      <div id="chatHeader" class="chat-header">
+        <span>Atendimento Fortune</span>
+        <div class="chat-buttons">
+          <button id="minimizeChat" type="button">–</button>
+          <button id="closeChat" type="button">×</button>
+        </div>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Digite sua resposta..." />
+        <button id="sendBtn" type="button">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script/planejamentocompra.js"></script>
+</body>
+</html>
